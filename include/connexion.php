@@ -1,14 +1,16 @@
 <?php
 
-// Création de la connexion à la base de données
-$serveur = "localhost:8080";
-$nom_de_la_base = "dbgestionlabo";
-$utilisateur = "root";
-$mot_de_passe = "root";
-$cnx = mysqli_connect($serveur, $utilisateur, $mot_de_passe, $nom_de_la_base);
+// connexion à la base de données
+$db_username = 'root';
+$db_password = 'root';
+$db_name     = 'dbgestionlabo';
+$db_host     = 'localhost';
+$db = mysqli_connect($db_host, $db_username, $db_password,$db_name)
+        or die('Connexion à la base de données impossible');
+  
 
 // Test du succès de la tentative de connexion
-if (!$cnx) {
+if (!$db) {
   $message='Erreur de connexion (' . mysqli_connect_errno() . ') ' . ' (' . mysqli_connect_error() . ') ';
   $newURL='/login';
   header("Location: .$newURL.php");
@@ -16,6 +18,6 @@ if (!$cnx) {
 }
 
 // Passage de la connexion en utf8
-mysqli_set_charset($cnx, 'utf8');
+mysqli_set_charset($db, 'utf8');
 
 ?>
