@@ -7,6 +7,5 @@
 <body>
   <?php include_once $racine .'/include/header.php' ?>
   <?php include_once $racine .'/include/nav.php' ?>
- 
 </body>
 </html>
