@@ -1,15 +1,11 @@
 <?php
 session_start();
+
+include_once $racine .'/include/connexion.php';
+
 if(isset($_POST['email']) && isset($_POST['pass']))
 {
-    // connexion à la base de données
-    $db_username = 'root';
-    $db_password = 'root';
-    $db_name     = 'dbgestionlabo';
-    $db_host     = 'localhost';
-    $db = mysqli_connect($db_host, $db_username, $db_password,$db_name)
-           or die('Connexion à la base de données impossible');
-    
+
     // on applique les deux fonctions mysqli_real_escape_string et htmlspecialchars
     // pour éliminer toute attaque de type injection SQL et XSS
     $username = mysqli_real_escape_string($db,htmlspecialchars($_POST['email'])); 
@@ -29,7 +25,9 @@ if(isset($_POST['email']) && isset($_POST['pass']))
         }
         else
         {
-           header('Location: login.php?erreur=1'); // utilisateur ou mot de passe incorrect
+        $alerte = '<script>alert("Utilisateur ou mot de passe incorrect")</script>';
+        $_POST[$alerte];
+        header('Location: login.php?erreur=1');
         }
     }
     else

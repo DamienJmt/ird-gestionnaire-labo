@@ -12,8 +12,8 @@ $db = mysqli_connect($db_host, $db_username, $db_password,$db_name)
 // Test du succès de la tentative de connexion
 if (!$db) {
   $message='Erreur de connexion (' . mysqli_connect_errno() . ') ' . ' (' . mysqli_connect_error() . ') ';
-  $newURL='/login';
-  header("Location: .$newURL.php");
+  $redirect='/login';
+  header("Location: .$redirect.php");
   die();
 }
 
