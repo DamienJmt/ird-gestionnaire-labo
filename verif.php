@@ -1,5 +1,5 @@
 <?php
-   session_start();
+session_start();
 
 if(isset($_POST['email']) && isset($_POST['pass'])) 
 {
@@ -39,15 +39,7 @@ if(isset($_POST['email']) && isset($_POST['pass']))
          foreach($result as $row) {
          $_SESSION['prenom'] = $row['prenom'];
          }
-
-         echo $_SESSION['email'];
-         echo "<br>";
-         echo $_SESSION['nom'];
-         echo "<br>";
-         echo $_SESSION['prenom'];
-
          header('Location: index.php');
-         exit;
       }
       else
       {
@@ -63,5 +55,5 @@ else
 {
    header('Location: login.php?no_session' . $_POST['email'] . ' ' . $_POST['pass']);
 }
-
+mysqli_close($db); // fermer la connexion
 ?>

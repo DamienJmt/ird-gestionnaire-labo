@@ -5,6 +5,7 @@
   <?php include_once $racine .'/include/head.php' ?>  
 </head>
 <body>
+
   <?php include_once $racine .'/include/header.php' ?>
   <?php include_once $racine .'/include/nav.php' ?>
 </body>
