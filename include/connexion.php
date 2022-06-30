@@ -14,7 +14,7 @@ if (!$db) {
   $message='Erreur de connexion (' . mysqli_connect_errno() . ') ' . ' (' . mysqli_connect_error() . ') ';
   $redirect='/login';
   header("Location: .$redirect.php");
-  die();
+  exit;
 }
 
 // Passage de la connexion en utf8

@@ -20,35 +20,34 @@ if(isset($_POST['email']) && isset($_POST['pass']))
       if($count!=0) // nom d'utilisateur et mot de passe correctes
       {
 
-
-
-
-
          $_SESSION['email'] = $username;
 
-         $requete = new mysqli($db_host, $db_username, $db_password,$db_name);
-         $requete->query("SELECT nom FROM user WHERE username = ' . $username");
-         $_SESSION['nom']=$requete;
+         $get_nom = "SELECT nom FROM user WHERE username = '$username'";
+         $get_prenom = "SELECT prenom FROM user WHERE username = '$username'";
 
-         $requete = new mysqli($db_host, $db_username, $db_password,$db_name);
-         $requete->query("SELECT prenom FROM user WHERE username = ' . $username");
-         $_SESSION['prenom']=$requete;
-         
+         mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+         $db = new mysqli($db_host, $db_username, $db_password,$db_name);
+
+         $query = "SELECT nom FROM user";
+         $result = $db->query($get_nom);
+         foreach($result as $row) {
+         $_SESSION['nom'] = $row['nom'];
+         }
+
+         $query = "SELECT prenom FROM user";
+         $result = $db->query($get_prenom);
+         foreach($result as $row) {
+         $_SESSION['prenom'] = $row['prenom'];
+         }
+
          echo $_SESSION['email'];
-         echo ($_SESSION['nom']);
+         echo "<br>";
+         echo $_SESSION['nom'];
+         echo "<br>";
          echo $_SESSION['prenom'];
 
-         // reussir à afficher resultat des requêtes - apres ça devrait marcher
-         // car le if dans heap.php pourra verifier les 3 conditions
-
-         // header('Location: index.php');
-
-
-
-
-
-
-
+         header('Location: index.php');
+         exit;
       }
       else
       {
@@ -64,5 +63,5 @@ else
 {
    header('Location: login.php?no_session' . $_POST['email'] . ' ' . $_POST['pass']);
 }
-mysqli_close($db); // fermer la connexion
+
 ?>

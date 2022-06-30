@@ -4,7 +4,13 @@
 if (isset($_SESSION['email']) && isset($_SESSION['nom']) && isset($_SESSION['prenom'])) {
     exit;
 } else {
-    // header('Location: login.php');
+    echo $_SESSION['email'];
+    echo "<br>";
+    echo $_SESSION['nom'];
+    echo "<br>";
+    echo $_SESSION['prenom'];
+    //header('Location: login.php');
+    exit;
 }
 ?>
 
