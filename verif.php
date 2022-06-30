@@ -25,12 +25,15 @@ if(isset($_POST['email']) && isset($_POST['pass']))
 
 
          $_SESSION['email'] = $username;
+
          $requete = new mysqli($db_host, $db_username, $db_password,$db_name);
          $requete->query("SELECT nom FROM user WHERE username = ' . $username");
          $_SESSION['nom']=$requete;
+
          $requete = new mysqli($db_host, $db_username, $db_password,$db_name);
          $requete->query("SELECT prenom FROM user WHERE username = ' . $username");
          $_SESSION['prenom']=$requete;
+         
          echo $_SESSION['email'];
          echo ($_SESSION['nom']);
          echo $_SESSION['prenom'];
@@ -45,7 +48,7 @@ if(isset($_POST['email']) && isset($_POST['pass']))
 
 
 
-         
+
       }
       else
       {
