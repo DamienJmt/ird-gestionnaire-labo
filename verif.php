@@ -31,6 +31,7 @@ if(isset($_POST['email']) && isset($_POST['pass']))
          echo $_SESSION['prenom'];
 
          // reussir à afficher resultat des requêtes - apres ça devrait marcher
+         // car le if dans heap.php pourra verifier les 3 conditions
 
          // header('Location: index.php');
       }
