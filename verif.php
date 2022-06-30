@@ -10,7 +10,7 @@ if(isset($_POST['email']) && isset($_POST['pass']))
    // pour éliminer toute attaque de type injection SQL et XSS
    $username = mysqli_real_escape_string($db,htmlspecialchars($_POST['email'])); 
    $password = mysqli_real_escape_string($db,htmlspecialchars($_POST['pass']));
-      
+   
    if($username !== "" && $password !== "")
    {
       $requete = "SELECT count(*) FROM user WHERE username = '".$username."' and password = '".$password."' ";
@@ -20,12 +20,12 @@ if(isset($_POST['email']) && isset($_POST['pass']))
       if($count!=0) // nom d'utilisateur et mot de passe correctes
       {
          $_SESSION['email'] = $username;
-         $_SESSION['nom'] = "SELECT nom FROM user WHERE username = ' . $username";
-         $_SESSION['nom'] = mysqli_query($db,$requete);
-
-
-
-         $_SESSION['prenom'] = $db->query("SELECT prenom FROM user WHERE username = ' . $username");
+         $requete = new mysqli($db_host, $db_username, $db_password,$db_name);
+         $requete->query("SELECT nom FROM user WHERE username = ' . $username");
+         $_SESSION['nom']=$requete;
+         $requete = new mysqli($db_host, $db_username, $db_password,$db_name);
+         $requete->query("SELECT prenom FROM user WHERE username = ' . $username");
+         $_SESSION['prenom']=$requete;
          echo $_SESSION['email'];
          echo $_SESSION['nom'];
          echo $_SESSION['prenom'];
