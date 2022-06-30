@@ -20,9 +20,8 @@ if(isset($_POST['email']) && isset($_POST['pass']))
       if($count!=0) // nom d'utilisateur et mot de passe correctes
       {
          $_SESSION['email'] = $username;
-         $requete = "SELECT nom FROM user WHERE username = ' . $username";
-         $exec_requete = mysqli_query($db,$requete);
-         $_SESSION['nom'] = mysqli_fetch_array($exec_requete);
+         $_SESSION['nom'] = "SELECT nom FROM user WHERE username = ' . $username";
+         $_SESSION['nom'] = mysqli_query($db,$requete);
 
 
 
@@ -30,6 +29,9 @@ if(isset($_POST['email']) && isset($_POST['pass']))
          echo $_SESSION['email'];
          echo $_SESSION['nom'];
          echo $_SESSION['prenom'];
+
+         // reussir à afficher resultat des requêtes - apres ça devrait marcher
+
          // header('Location: index.php');
       }
       else
