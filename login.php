@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 	<title>Connexion</title>
 	<meta charset="UTF-8">
@@ -24,7 +24,7 @@
 					<img src="images/logo-ird.png" alt="IMG">
 				</div>
 
-				<form action="verif.php" method="POST" class="login100-form validate-form">
+				<form action="verif.php" method="post" class="login100-form validate-form">
 					<span class="login100-form-title">Entrer vos identifiants :</span>
 						
 					<div class="wrap-input100 validate-input" data-validate = "Entrer un email valide : exemple@ird.fr">
@@ -44,14 +44,15 @@
 					</div>
 					
 					<div class="container-login100-form-btn">
-						<button type="submit" id='submit' class="login100-form-btn">Se connecter</button>
+						<!-- <button type="submit" id='submit' class="login100-form-btn">Se connecter</button> -->
+						<input class="login100-form-btn" id='submit' type="submit" value="Se connecter">
 					</div>
 	
                     <?php
                     if(isset($_GET['erreur'])){
                          $err = $_GET['erreur'];
                     if($err==1 || $err==2)
-                        echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
+                        echo "<br><p class='error'>Email ou mot de passe incorrect !</p>";
                     }
                     ?>
 

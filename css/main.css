@@ -460,3 +460,9 @@ iframe {
     opacity: 1;
   }
 }
+
+.error {
+  color:#C80018;
+  font-size: 109%;
+  font-weight: bold;
+}

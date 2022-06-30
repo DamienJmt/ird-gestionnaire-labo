@@ -68,6 +68,24 @@ CREATE TABLE `dechet`(
     `remarque` VARCHAR(255) NULL,
     `num` VARCHAR(255) NOT NULL
 );
+
+
+ALTER TABLE `etagere` ADD INDEX(`id_produit`);
+ALTER TABLE `etagere` ADD INDEX(`id_dechet`);
+ALTER TABLE `marque` ADD INDEX(`id_produit`);
+ALTER TABLE `unite` ADD INDEX(`id_user`);
+ALTER TABLE `unite` ADD INDEX(`id_produit`);
+ALTER TABLE `unite` ADD INDEX(`id_dechet`);
+ALTER TABLE `danger_dechet` ADD INDEX(`id_dechet`);
+ALTER TABLE `danger_dechet` ADD INDEX(`id_classe_de_danger`);
+ALTER TABLE `danger_produit` ADD INDEX(`id_produit`);
+ALTER TABLE `danger_produit` ADD INDEX(`id_classe_de_danger`);
+ALTER TABLE `user_dechet` ADD INDEX(`id_dechet`);
+ALTER TABLE `user_dechet` ADD INDEX(`id_user`);
+ALTER TABLE `user_produit` ADD INDEX(`id_produit`);
+ALTER TABLE `user_produit` ADD INDEX(`id_user`);
+
+
 ALTER TABLE
     `danger_produit` ADD CONSTRAINT `danger_produit_id_produit_foreign` FOREIGN KEY(`id_produit`) REFERENCES `produit`(`id`);
 ALTER TABLE
