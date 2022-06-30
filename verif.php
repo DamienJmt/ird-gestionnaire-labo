@@ -19,6 +19,11 @@ if(isset($_POST['email']) && isset($_POST['pass']))
       $count = $reponse['count(*)'];
       if($count!=0) // nom d'utilisateur et mot de passe correctes
       {
+
+
+
+
+
          $_SESSION['email'] = $username;
          $requete = new mysqli($db_host, $db_username, $db_password,$db_name);
          $requete->query("SELECT nom FROM user WHERE username = ' . $username");
@@ -27,13 +32,20 @@ if(isset($_POST['email']) && isset($_POST['pass']))
          $requete->query("SELECT prenom FROM user WHERE username = ' . $username");
          $_SESSION['prenom']=$requete;
          echo $_SESSION['email'];
-         echo $_SESSION['nom'];
+         echo ($_SESSION['nom']);
          echo $_SESSION['prenom'];
 
          // reussir à afficher resultat des requêtes - apres ça devrait marcher
          // car le if dans heap.php pourra verifier les 3 conditions
 
          // header('Location: index.php');
+
+
+
+
+
+
+         
       }
       else
       {
