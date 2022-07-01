@@ -9,7 +9,7 @@
 </div>
 
 <div class="right">
-    <a style="text-decoration: none; color: white;" href="logout.php">Déconnexion</a>
+    <a class="white-link" href="logout.php">Déconnexion</a>
 </div>
 
 </header>

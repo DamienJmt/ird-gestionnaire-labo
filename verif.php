@@ -27,6 +27,7 @@ if(isset($_POST['email']) && isset($_POST['pass']))
 
          mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
          $db = new mysqli($db_host, $db_username, $db_password,$db_name);
+         $db->set_charset("utf8");
 
          $query = "SELECT nom FROM user";
          $result = $db->query($get_nom);
