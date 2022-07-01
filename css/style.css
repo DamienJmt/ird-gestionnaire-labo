@@ -52,7 +52,7 @@ body {
 
 /* ------------------------------------------SIDE NAV------------------------------------------ */
 nav ul {
-    background-color: #2fc5f3; 
+    background-color: #65b7d3; 
     color: #308E97;
     list-style-type: none;
     margin: 0;
@@ -128,6 +128,13 @@ nav li a:hover {
   #table1 tr:nth-child(even){background-color: #f2f2f2;}
   
   #table1 tr:hover {background-color: #ddd;}
+
+  #table1 tr img {
+    height: 32px;
+    width: 32px;
+    display: block;
+    margin: auto;
+}
   
   #table1 th {
     padding-top: 12px;
@@ -135,4 +142,8 @@ nav li a:hover {
     text-align: left;
     background-color: #0A475A;
     color: white;
+  }
+
+.reduit {
+    width: 6.5%;
   }
