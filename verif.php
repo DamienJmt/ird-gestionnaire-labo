@@ -29,22 +29,22 @@ if(isset($_POST['email']) && isset($_POST['pass']))
          $db = new mysqli($db_host, $db_username, $db_password,$db_name);
          $db->set_charset("utf8");
 
-         $query = "SELECT nom FROM user";
          $result = $db->query($get_nom);
          foreach($result as $row) {
          $_SESSION['nom'] = $row['nom'];
          }
 
-         $query = "SELECT prenom FROM user";
          $result = $db->query($get_prenom);
          foreach($result as $row) {
          $_SESSION['prenom'] = $row['prenom'];
          }
+
          header('Location: index.php');
+         
       }
       else
       {
-      header('Location: login.php?erreur=1'); // nom d'utilisateur ou mot de passe incorrectes
+         header('Location: login.php?erreur=1'); // nom d'utilisateur ou mot de passe incorrectes
       }
    }
    else
@@ -54,7 +54,7 @@ if(isset($_POST['email']) && isset($_POST['pass']))
 }
 else
 {
-   header('Location: login.php?no_session' . $_POST['email'] . ' ' . $_POST['pass']);
+   header('Location: login.php?no_session');
 }
 mysqli_close($db); // fermer la connexion
 ?>
