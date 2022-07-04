@@ -12,7 +12,7 @@
 
     <div class="article">
 
-        <h2>Liste de tous les produits :</h2>
+        <h2>Liste de tous les produits du stock :</h2>
 
         <table id="table1">
             <thead>

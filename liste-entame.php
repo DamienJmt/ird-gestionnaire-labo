@@ -12,7 +12,7 @@
 
     <div class="article">
 
-        <h2>Liste de tous les déchets :</h2>
+        <h2>Liste de tous les produits entamés :</h2>
 
 
 
