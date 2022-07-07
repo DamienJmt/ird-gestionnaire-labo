@@ -75,6 +75,5 @@
     $date_entree = $ligne['date_entree'];
     // remarque
     $remarque = $ligne['remarque'];
-    
-                    
+     
 ?>

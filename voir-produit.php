@@ -11,10 +11,10 @@
     <div class="article">
 
     <?php
-    $id = $POST['id']
+    $id_produit = $POST['id'];
     ?>
 
-    <h2>Vouc pouvez ici voir et modifier les informations du produit "<?php echo $id; ?>" :</h2>
+    <h2>Vous pouvez ici voir et modifier les informations du produit "<?php echo $id_produit; ?>" :</h2>
 
     </div>
     

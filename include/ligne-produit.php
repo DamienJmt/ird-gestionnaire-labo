@@ -12,8 +12,8 @@
     <td><?php echo $remarque; ?></td>
     <td>                        
     <form action="voir-produit.php" method="post">
-        <input type="hidden" name ="id" value="<?php echo $id; ?>"></input>
-        <input type="image" id="image" alt="Voir" class="reduit2" style="text-align: center;" src="images/voir.png">
+        <input type="hidden" name ="id" value="<?php echo $id; ?>">
+        <input type="image" id="image" alt="Voir" class="reduit2" src="images/voir.png">
         <!-- <input class="login100-form-btn" id="submit" type="submit" value="Voir"> -->
     </form>
     </td>
