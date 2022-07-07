@@ -8,7 +8,9 @@
     <?php include_once $racine .'/include/header.php' ?>
     <?php include_once $racine .'/include/nav.php' ?>
 
-    <div class="article">
+    <div class="article-index">
+        <h1>Bienvenue dans le gestionnaire de laboratoire de l'IRD de Nouvelle-Calédonie !</h1>
+        <img src="images/logo-ird.png" alt="Logo IRD">
     </div>
     
 </body>

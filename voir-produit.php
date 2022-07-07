@@ -9,6 +9,9 @@
     <?php include_once $racine .'/include/nav.php' ?>
 
     <div class="article">
+
+    <h2>Vouc pouvez ici voir et modifier les informations du produit "<?php echo $POST['id']; ?>" :</h2>
+
     </div>
     
 </body>

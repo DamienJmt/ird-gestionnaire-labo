@@ -149,5 +149,28 @@ nav li a:hover {
   }
 
 .reduit2 {
-    width: 43%;
+    width: 50%;
+    margin-left: 23%;
+    margin-top: 5%;
+}
+
+
+/* ------------------------------------------INDEX------------------------------------------ */
+h1 {
+    font-size: 60px;
+    margin-bottom: 5%;
+    text-shadow: rgb(7, 46, 85) 2px 2px 7px;
+    color: rgb(6, 38, 70);
+}
+
+.article-index {
+    text-align: center;
+    list-style-type: none;
+    margin-top: 2%;
+    margin-left: 18.5%;
+    margin-right: 1.5%;
+    width: 80%;
+    height: 100%; /* Full height */
+    position: fixed; /* Make it stick, even on scroll */
+    overflow: auto; /* Enable scrolling if the sidenav has too much content */
 }

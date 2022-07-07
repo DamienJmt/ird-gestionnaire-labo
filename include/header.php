@@ -5,7 +5,7 @@
 </div>
 
 <div class="tittle">
-    <h2>IRD - Gestionnaire de laboratoire</h2>
+    <a class="white-link" href="index.php"><h2>IRD - Gestionnaire de laboratoire</h2></a>
 </div>
 
 <div class="right">

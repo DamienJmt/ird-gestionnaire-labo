@@ -120,12 +120,9 @@
                          '<td>
                          
                          <form action="voir-produit.php" method="post">
-                         <input type="hidden" name ="id" value="<?php echo $ligne["id"];?>"></input>
-                         <input type="submit" name ="id" value="' . $ligne['id'] . '"></input>
-                         <a id="submit" type="submit" href="/fonctions/voir_produit.php"><img src="images/voir.png" alt="voir"/></a>
-                         <input type="image" id="image" alt="Voir" class="reduit2" src="images/voir.png">
+                         <input type="hidden" name ="id" value="<?php echo $ligne["id"]; ?></input>
+                         <input type="image" id="image" alt="Voir" class="reduit2" style="text-align: center;" src="images/voir.png">
                          </form>
-
 
                          </td>' .
                          '<td><a href="/fonctions/retirer.php"><img src="images/retirer.png" alt="retirer"/></a></td>' .
