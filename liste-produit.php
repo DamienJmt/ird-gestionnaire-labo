@@ -26,10 +26,11 @@
                     <th>Unité</th>
                     <th>Classe de danger</th>
                     <th>Date d'entrée</th>
+                    <th>Par</th>
                     <th>Remarque</th>
                     <th class="reduit" style="text-align: center;">Voir</th>
                     <th class="reduit" style="text-align: center;">Retirer</th>
-                    <th class="reduit" style="text-align: center;">Supprimer</th>
+                    <!-- <th class="reduit" style="text-align: center;">Supprimer</th> -->
                 </tr>
             </thead>
             <tbody>
@@ -42,32 +43,67 @@
                 $resultat = $mysqli->query($requete);
                 while ($ligne = $resultat->fetch_assoc()) {
 
+                    // marque
                     $get_marque = "SELECT libelle FROM marque WHERE id=" . $ligne['id_marque'] . "";
                     $resultat = $mysqli->query($get_marque);
                     while($row = $resultat->fetch_assoc())
-                     {
+                    {
                         $marque = implode($row);
-                     } 
+                    } 
                      
-                    $get_lieu = "SELECT libelle FROM lieu LEFT JOIN etagere ON lieu.id=etagere.id_lieu";
+                    // lieu
+                    $q = "SELECT id_lieu FROM etagere WHERE id = " . $ligne['id_etagere'] . "";
+                    $resultat = $mysqli->query($q);
+                    while($row = $resultat->fetch_assoc())
+                    {
+                        $r = implode($row);
+                    } 
+                    $get_lieu = "SELECT libelle FROM lieu WHERE id = " . $r . "";
                     $resultat = $mysqli->query($get_lieu);
                     while($row = $resultat->fetch_assoc())
-                     {
+                    {
                         $lieu = implode($row);
-                     } 
-
+                    } 
                     
-
+                    // etagere
                     $get_etagere = "SELECT libelle FROM etagere WHERE id=" . $ligne['id_etagere'] . "";
                     $resultat = $mysqli->query($get_etagere);
                     while($row = $resultat->fetch_assoc())
-                     {
+                    {
                         $etagere = implode($row);
-                     } 
+                    } 
 
-                    $get_unite = "";
+                    // user
+                    $get_user = "SELECT initiales FROM user WHERE id=" . $ligne['id_user_entree'] . "";
+                    $resultat = $mysqli->query($get_user);
+                    while($row = $resultat->fetch_assoc())
+                    {
+                        $user = implode($row);
+                    } 
+                     
 
-                    $get_classe = "";
+                    // unite
+                    $q = "SELECT id_unite FROM user WHERE id = " . $ligne['id_user_entree'] . "";
+                    $resultat = $mysqli->query($q);
+                    while($row = $resultat->fetch_assoc())
+                    {
+                        $r = implode($row);
+                    } 
+                    $get_unite = "SELECT libelle FROM unite WHERE id = " . $r . "";
+                    $resultat = $mysqli->query($get_unite);
+                    while($row = $resultat->fetch_assoc())
+                    {
+                        $unite = implode($row);
+                    } 
+
+                    // classe de danger
+                    $get_classe = "SELECT libelle FROM classe_de_danger WHERE id=" . $ligne['id_classe_de_danger'] . "";
+                    $resultat = $mysqli->query($get_classe);
+                    while($row = $resultat->fetch_assoc())
+                    {
+                        $classe = implode($row);
+                    } 
+                    
 
                     echo '<tr>' .
                          '<td>' . $ligne['nom'] . '</td>' . 
@@ -76,13 +112,14 @@
                          '<td>' . $ligne['volume'] . '</td>' . 
                          '<td>' . $lieu . '</td>' . 
                          '<td>' . $etagere . '</td>' . 
-                         '<td>' . $ligne['id_user_entree'] . '</td>' . 
-                         '<td>' . $ligne['id_classe_de_danger'] . '</td>' . 
-                         '<td>' . $ligne['date_entree'] . '</td>' . 
+                         '<td>' . $unite . '</td>' . 
+                         '<td>' . $classe . '</td>' . 
+                         '<td>' . $ligne['date_entree'] . '</td>' .
+                         '<td>' . $user . '</td>' .  
                          '<td>' . $ligne['remarque'] . '</td>' . 
                          '<td><a href="/fontions/voir.php"><img src="images/voir.png" alt="voir"/></td>' .
                          '<td><a href="/fontions/retirer.php"><img src="images/retirer.png" alt="retirer"/></td>' .
-                         '<td><a href="/fontions/supprimer.php"><img src="images/remove.png" alt="supprimer"/></td>' .
+                        //  '<td><a href="/fontions/supprimer.php"><img src="images/remove.png" alt="supprimer"/></td>' .
                          '</tr>';
 
                 }
