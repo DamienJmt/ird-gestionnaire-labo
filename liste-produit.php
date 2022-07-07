@@ -117,9 +117,19 @@
                          '<td>' . $ligne['date_entree'] . '</td>' .
                          '<td>' . $user . '</td>' .  
                          '<td>' . $ligne['remarque'] . '</td>' . 
-                         '<td><a href="/fontions/voir.php"><img src="images/voir.png" alt="voir"/></td>' .
-                         '<td><a href="/fontions/retirer.php"><img src="images/retirer.png" alt="retirer"/></td>' .
-                        //  '<td><a href="/fontions/supprimer.php"><img src="images/remove.png" alt="supprimer"/></td>' .
+                         '<td>
+                         
+                         <form action="voir-produit.php" method="post">
+                         <input type="hidden" name ="id" value="<?php echo $ligne["id"];?>"></input>
+                         <input type="submit" name ="id" value="' . $ligne['id'] . '"></input>
+                         <a id="submit" type="submit" href="/fonctions/voir_produit.php"><img src="images/voir.png" alt="voir"/></a>
+                         <input type="image" id="image" alt="Voir" class="reduit2" src="images/voir.png">
+                         </form>
+
+
+                         </td>' .
+                         '<td><a href="/fonctions/retirer.php"><img src="images/retirer.png" alt="retirer"/></a></td>' .
+                        //  '<td><a href="/fonctions/supprimer.php"><img src="images/remove.png" alt="supprimer"/></td>' .
                          '</tr>';
 
                 }
