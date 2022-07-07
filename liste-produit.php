@@ -1,7 +1,7 @@
 <?php $racine = $_SERVER['DOCUMENT_ROOT'].'ird-gestionnaire-labo' ?><!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Accueil - Gestionnaire de labo</title>
+    <title>Accueil - Liste du stock</title>
     <?php include_once $racine .'/include/head.php' ?>
     <?php include_once $racine .'/include/connexion.php' ?>   
 </head>
@@ -18,11 +18,15 @@
             <thead>
                 <tr>
                     <th>Nom</th>
+                    <th>Marque</th>
                     <th>Référence</th>
                     <th>Volume</th>
+                    <th>Lieu</th>
+                    <th>Etagère</th>
+                    <th>Unité</th>
+                    <th>Classe de danger</th>
                     <th>Date d'entrée</th>
                     <th>Remarque</th>
-                    <th>Numéro de produit</th>
                     <th class="reduit" style="text-align: center;">Voir</th>
                     <th class="reduit" style="text-align: center;">Retirer</th>
                     <th class="reduit" style="text-align: center;">Supprimer</th>
@@ -32,18 +36,35 @@
                 <?php
                 $mysqli = new mysqli($db_host, $db_username, $db_password,$db_name);
                 $mysqli->set_charset("utf8");
-                $requete = "SELECT * FROM produit WHERE retire=0";
+                $requete = "SELECT * FROM produit WHERE entame=0";
                 // La page des produits retirés sera exatement la même que celle-ci à une exeption près, il faudra écrire "retire=1" dans la requête ci-dessus.
                 // Fonction inverse de retirer dans la page "retirer produit" ?
                 $resultat = $mysqli->query($requete);
                 while ($ligne = $resultat->fetch_assoc()) {
+
+                    $get_marque = mysqli_query($db,"SELECT libelle FROM marque WHERE id=" . $ligne['id_marque'] . "");
+                    $marque = "";
+                    while($row = mysqli_fetch_string($get_marque))
+                     {
+                        $marque = $row;
+                     } 
+
+                    $get_etagere = "";
+                    $get_lieu = "";
+                    $get_unite = "";
+                    $get_classe = "";
+
                     echo '<tr>' .
                          '<td>' . $ligne['nom'] . '</td>' . 
+                         '<td>' . $marque . '</td>' . 
                          '<td>' . $ligne['reference'] . '</td>' . 
                          '<td>' . $ligne['volume'] . '</td>' . 
+                         '<td>' . $ligne['id_etagere'] . '</td>' . 
+                         '<td>' . $ligne['id_etagere'] . '</td>' . 
+                         '<td>' . $ligne['id_user_entree'] . '</td>' . 
+                         '<td>' . $ligne['id_classe_de_danger'] . '</td>' . 
                          '<td>' . $ligne['date_entree'] . '</td>' . 
                          '<td>' . $ligne['remarque'] . '</td>' . 
-                         '<td>' . $ligne['num'] . '</td>' .
                          '<td><a href="/fontions/voir.php"><img src="images/voir.png" alt="voir"/></td>' .
                          '<td><a href="/fontions/retirer.php"><img src="images/retirer.png" alt="retirer"/></td>' .
                          '<td><a href="/fontions/supprimer.php"><img src="images/remove.png" alt="supprimer"/></td>' .
