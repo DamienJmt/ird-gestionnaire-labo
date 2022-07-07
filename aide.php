@@ -1,7 +1,7 @@
 <?php $racine = $_SERVER['DOCUMENT_ROOT'].'ird-gestionnaire-labo' ?><!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Produits entamés</title>
+    <title>Liste du stock</title>
     <?php include_once $racine .'/include/head.php' ?>
     <?php include_once $racine .'/include/connexion.php' ?>   
 </head>
@@ -12,9 +12,7 @@
 
     <div class="article">
 
-        <h2>Liste de tous les produits entamés :</h2>
-
-
+        <h2>Quelques astuces :</h2>
 
     </div>
 

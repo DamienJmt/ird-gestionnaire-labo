@@ -1,7 +1,7 @@
 <?php $racine = $_SERVER['DOCUMENT_ROOT'].'ird-gestionnaire-labo' ?><!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Accueil - Gestionnaire de labo</title>
+    <title>Détails du produit</title>
     <?php include_once $racine .'/include/head.php' ?>  
 </head>
 <body>
@@ -10,7 +10,11 @@
 
     <div class="article">
 
-    <h2>Vouc pouvez ici voir et modifier les informations du produit "<?php echo $POST['id']; ?>" :</h2>
+    <?php
+    $id = $POST['id']
+    ?>
+
+    <h2>Vouc pouvez ici voir et modifier les informations du produit "<?php echo $id; ?>" :</h2>
 
     </div>
     

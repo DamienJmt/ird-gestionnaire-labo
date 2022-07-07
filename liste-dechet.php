@@ -1,7 +1,7 @@
 <?php $racine = $_SERVER['DOCUMENT_ROOT'].'ird-gestionnaire-labo' ?><!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Accueil - Liste des déchets</title>
+    <title>Liste des déchets</title>
     <?php include_once $racine .'/include/head.php' ?>
     <?php include_once $racine .'/include/connexion.php' ?>   
 </head>
