@@ -42,16 +42,31 @@
                 $resultat = $mysqli->query($requete);
                 while ($ligne = $resultat->fetch_assoc()) {
 
-                    $get_marque = mysqli_query($db,"SELECT libelle FROM marque WHERE id=" . $ligne['id_marque'] . "");
-                    $marque = "";
-                    while($row = mysqli_fetch_string($get_marque))
+                    $get_marque = "SELECT libelle FROM marque WHERE id=" . $ligne['id_marque'] . "";
+                    $resultat = $mysqli->query($get_marque);
+                    while($row = $resultat->fetch_assoc())
                      {
-                        $marque = $row;
+                        $marque = implode($row);
+                     } 
+                     
+                    $get_lieu = "SELECT libelle FROM lieu LEFT JOIN etagere ON lieu.id=etagere.id_lieu";
+                    $resultat = $mysqli->query($get_lieu);
+                    while($row = $resultat->fetch_assoc())
+                     {
+                        $lieu = implode($row);
                      } 
 
-                    $get_etagere = "";
-                    $get_lieu = "";
+                    
+
+                    $get_etagere = "SELECT libelle FROM etagere WHERE id=" . $ligne['id_etagere'] . "";
+                    $resultat = $mysqli->query($get_etagere);
+                    while($row = $resultat->fetch_assoc())
+                     {
+                        $etagere = implode($row);
+                     } 
+
                     $get_unite = "";
+
                     $get_classe = "";
 
                     echo '<tr>' .
@@ -59,8 +74,8 @@
                          '<td>' . $marque . '</td>' . 
                          '<td>' . $ligne['reference'] . '</td>' . 
                          '<td>' . $ligne['volume'] . '</td>' . 
-                         '<td>' . $ligne['id_etagere'] . '</td>' . 
-                         '<td>' . $ligne['id_etagere'] . '</td>' . 
+                         '<td>' . $lieu . '</td>' . 
+                         '<td>' . $etagere . '</td>' . 
                          '<td>' . $ligne['id_user_entree'] . '</td>' . 
                          '<td>' . $ligne['id_classe_de_danger'] . '</td>' . 
                          '<td>' . $ligne['date_entree'] . '</td>' . 
