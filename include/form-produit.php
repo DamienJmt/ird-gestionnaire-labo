@@ -1,5 +1,7 @@
 <form action="fonctions/modifier.php.php" class ='txt' method="post">
 
+<!-- -------------------------------------------DIV-GAUCHE--------------------------------------------- -->
+
 <div>
     <div>
     <label>Nom :</label>
@@ -72,6 +74,11 @@
     <p>donnée actuelle : <?php echo $date_entree;?><p>
 </div>
 
+<!-- ---------------------------------------------------------------------------------------------------- -->
+
+
+<!-- -------------------------------------------DIV-DROITE----------------------------------------------- -->
+
 <div>
     <div>
     <label>Personne l'ayant entré dans le stock :</label>
@@ -129,5 +136,12 @@
 
 <div>
 </div>
+
+<div>
+    <input type="hidden" name="edit">
+    <input class="bouton" type="submit" value="Modifier">
+</div>
+
+<!-- ---------------------------------------------------------------------------------------------------- -->
 
 </form>
