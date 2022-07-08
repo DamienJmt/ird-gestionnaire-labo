@@ -74,7 +74,7 @@
 
 <div>
     <div>
-    <label>Personne l'ayant entré :</label>
+    <label>Personne l'ayant entré dans le stock :</label>
     <input type="text" name="user_entree" id="user_entree" value="<?php echo $user_entree;?>">
     <img src="images/remove.png" alt="Vider" onclick="document.getElementById('user_entree').value = ''">
     <p>donnée actuelle : <?php echo $user_entree;?><p>
@@ -91,8 +91,7 @@
 <div>
     <div>
     <label>Entamé ou non :</label>
-    <label class="choix">Oui</label><input type="radio" name="entame" value="true"/>
-    <label class="choix">Non</label><input type="radio" name="entame" value="false"/>
+    <input type="checkbox" name="entame" onload="javascript:this.checked=$entame" />
     <p>donnée actuelle : 
         <?php 
             if ($entame) {
@@ -114,6 +113,14 @@
 
 <div>
     <div>
+    <label>Personne l'ayant sorti du stock :</label>
+    <input type="text" name="user_sortie" id="user_sortie" value="<?php echo $user_sortie;?>">
+    <img src="images/remove.png" alt="Vider" onclick="document.getElementById('user_sortie').value = ''">
+    <p>donnée actuelle : <?php echo $user_sortie;?><p>
+</div>
+
+<div>
+    <div>
     <label>Numéro :</label>
     <input type="text" name="num" id="num" value="<?php echo $num;?>">
     <img src="images/remove.png" alt="Vider" onclick="document.getElementById('num').value = ''">
@@ -121,11 +128,6 @@
 </div>
 
 <div>
-    <div>
-    <label>Personne l'ayant sorti :</label>
-    <input type="text" name="user_sortie" id="user_sortie" value="<?php echo $user_sortie;?>">
-    <img src="images/remove.png" alt="Vider" onclick="document.getElementById('user_sortie').value = ''">
-    <p>donnée actuelle : <?php echo $user_sortie;?><p>
 </div>
 
 </form>
