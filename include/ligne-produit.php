@@ -8,7 +8,7 @@
     <td><?php echo $unite; ?></td>
     <td><?php echo $classe; ?></td>
     <td><?php echo $date_entree; ?></td>
-    <td><?php echo $user; ?></td>
+    <td><?php echo $user_entree; ?></td>
     <td><?php echo $remarque; ?></td>
     <td>                        
     <form action="voir-produit.php" method="post">
@@ -19,4 +19,4 @@
     </td>
     <td><a href="/fonctions/retirer.php"><img src="images/retirer.png" alt="retirer"/></a></td>
     <!-- <td><a href="/fonctions/supprimer.php"><img src="images/remove.png" alt="supprimer"/></td> -->
-</tr>       
+</tr>

@@ -175,3 +175,32 @@ h1 {
     position: fixed; /* Make it stick, even on scroll */
     overflow: auto; /* Enable scrolling if the sidenav has too much content */
 }
+
+
+/* ------------------------------------------FORM------------------------------------------ */
+
+form div {
+    margin-top: 3%;
+}
+
+form div label {
+    font-size: 130%;
+    margin-left: 2%;
+}
+
+form div label .choix {
+    margin-left: 2%;
+}
+
+form div img {
+    vertical-align: middle;
+    width: 1.2%;
+    height: 1.2%;
+}
+
+form div p {
+    font-size: 90%;
+    font-style: italic;
+    margin-top: 3px;
+    margin-left: 2%;
+}
