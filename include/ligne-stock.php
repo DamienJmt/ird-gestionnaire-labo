@@ -1,14 +1,11 @@
 <tr>
     <td><?php echo $nom; ?></td>
     <td><?php echo $marque; ?></td>
-    <td><?php echo $reference; ?></td>
     <td><?php echo $volume; ?></td>
     <td><?php echo $lieu; ?></td>
     <td><?php echo $etagere; ?></td>
     <td><?php echo $unite; ?></td>
     <td><?php echo $classe; ?></td>
-    <td><?php echo $date_entree; ?></td>
-    <td><?php echo $user_entree; ?></td>
     <td><?php echo $remarque; ?></td>
     <td>                        
     <form action="voir-produit.php" method="post">
@@ -18,5 +15,5 @@
     </form>
     </td>
     <td><a href="/fonctions/retirer.php"><img src="images/retirer.png" alt="retirer"/></a></td>
-    <!-- <td><a href="/fonctions/supprimer.php"><img src="images/remove.png" alt="supprimer"/></td> -->
+    <td><a href="/fonctions/supprimer.php"><img src="images/remove.png" alt="supprimer"/></td>
 </tr>

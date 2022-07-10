@@ -14,23 +14,24 @@
 
         <h2>Liste de tous les produits du stock :</h2>
 
+        <div>
+        <a href="ajout-produit.php"><button class="bouton-2">Ajouter un produit dans le stock</button></a>
+        </div>
+
         <table id="table1">
             <thead>
                 <tr>
                     <th>Nom</th>
                     <th>Marque</th>
-                    <th>Référence</th>
-                    <th>Volume</th>
+                    <th>Conditionnement</th>
                     <th>Lieu</th>
                     <th>Etagère</th>
                     <th>Unité</th>
                     <th>Classe de danger</th>
-                    <th>Date d'entrée</th>
-                    <th>Par</th>
                     <th>Remarque</th>
                     <th class="reduit" style="text-align: center;">Voir</th>
                     <th class="reduit" style="text-align: center;">Retirer</th>
-                    <!-- <th class="reduit" style="text-align: center;">Supprimer</th> -->
+                    <th class="reduit" style="text-align: center;">Supprimer</th>
                 </tr>
             </thead>
             <tbody>
@@ -46,7 +47,7 @@
 
                     ?>
 
-                    <?php include_once $racine .'/include/ligne-produit.php';?>
+                    <?php include_once $racine .'/include/ligne-stock.php';?>
                     
                     <?php
 

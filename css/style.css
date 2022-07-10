@@ -204,3 +204,36 @@ form div p {
     margin-top: 3px;
     margin-left: 2%;
 }
+
+.div-g {
+    /* background-color: goldenrod; */
+}
+
+.div-d {
+    /* background-color: #308E97;
+    margin-left: 45%;
+    display: block;
+    float: right;
+    vertical-align: middle; */
+}
+
+/* ----------------------------------------------------------------------------------------- */
+
+.bouton-modif {
+    margin-left: 2%;
+    background-color: rgb(101, 185, 101);
+    font-size: 130%;
+    border-color: #174d5e;
+    width: 7%;
+}
+
+.bouton-2 {
+    display: block;
+    float: right;
+    background-color: rgb(101, 185, 101);
+    font-size: 130%;
+    border-color: #174d5e;
+    width: 25%;
+    margin-bottom: 1%;
+}
+

@@ -1,6 +1,6 @@
 <form action="fonctions/modifier.php.php" class ='txt' method="post">
 
-<!-- -------------------------------------------DIV-GAUCHE--------------------------------------------- -->
+<div class="div-g"><!-- -------------------------------------------DIV-GAUCHE--------------------------------------------- -->
 
 <div>
     <div>
@@ -28,7 +28,7 @@
 
 <div>
     <div>
-    <label>Volume :</label>
+    <label>Conditionnement :</label>
     <input type="text" name="volume" id="volume" value="<?php echo $volume;?>">
     <img src="images/remove.png" alt="Vider" onclick="document.getElementById('volume').value = ''">
     <p>donnée actuelle : <?php echo $volume;?><p>
@@ -74,10 +74,10 @@
     <p>donnée actuelle : <?php echo $date_entree;?><p>
 </div>
 
-<!-- ---------------------------------------------------------------------------------------------------- -->
+</div><!-- ---------------------------------------------------------------------------------------------------- -->
 
 
-<!-- -------------------------------------------DIV-DROITE----------------------------------------------- -->
+<div class="div-d"><!-- -------------------------------------------DIV-DROITE----------------------------------------------- -->
 
 <div>
     <div>
@@ -135,13 +135,13 @@
 </div>
 
 <div>
+    <input type="hidden" name="edit">
+    <input class="bouton-modif" type="submit" value="Modifier">
 </div>
 
 <div>
-    <input type="hidden" name="edit">
-    <input class="bouton" type="submit" value="Modifier">
 </div>
 
-<!-- ---------------------------------------------------------------------------------------------------- -->
+</div><!-- ---------------------------------------------------------------------------------------------------- -->
 
 </form>
