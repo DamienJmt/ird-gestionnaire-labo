@@ -14,11 +14,18 @@
 
         <h2>A propos :</h2>
 
-        <p>  Gestionnaire de laboratoire pour l'IRD de Nouvelle-Calédonie.  </p>
+        <p>Gestionnaire de laboratoire pour l'IRD de Nouvelle-Calédonie.</p>
 
         <h2>Documentation :</h2>
 
-        <p>  ici  </p>
+        <p>Caractéristiques de développement :</p>
+        <ul>
+            <li>PHP (php-5.6.18)</li>
+            <li>MySQL (mysql-5.7.11)</li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
 
     </div>
 

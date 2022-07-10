@@ -15,7 +15,7 @@
         <h2>Liste de tous les produits du stock :</h2>
 
         <div>
-        <a href="ajout-produit.php"><button class="bouton-2">Ajouter un produit dans le stock</button></a>
+        <a href="ajout-produit.php"><button class="bouton-ajouter">Ajouter un produit dans le stock</button></a>
         </div>
 
         <table id="table1">

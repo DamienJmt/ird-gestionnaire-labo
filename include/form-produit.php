@@ -136,7 +136,12 @@
 
 <div>
     <input type="hidden" name="edit">
-    <input class="bouton-modif" type="submit" value="Modifier">
+    <input class="bouton-modif" type="submit" value="Enregistrer">
+</div>
+
+<div>
+    <input type="hidden" name="delete">
+    <input class="bouton-supp" type="submit" value="Supprimer">
 </div>
 
 <div>

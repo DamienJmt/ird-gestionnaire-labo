@@ -14,7 +14,7 @@
 
         <h2>Veuillez compléter les informations du produit à ajouter au stock :</h2>
 
-
+        <?php include_once $racine .'/include/form-add-produit.php' ?>
 
     </div>
 

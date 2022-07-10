@@ -224,14 +224,23 @@ form div p {
     background-color: rgb(101, 185, 101);
     font-size: 130%;
     border-color: #174d5e;
-    width: 7%;
+    width: 8%;
 }
 
-.bouton-2 {
+.bouton-supp {
+    margin-left: 2%;
+    background-color: rgb(240, 71, 71);
+    font-size: 130%;
+    border-color: #174d5e;
+    width: 8%;
+    display: block;
+}
+
+.bouton-ajouter {
     display: block;
     float: right;
     background-color: rgb(101, 185, 101);
-    font-size: 130%;
+    font-size: 155%;
     border-color: #174d5e;
     width: 25%;
     margin-bottom: 1%;
