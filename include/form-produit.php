@@ -1,4 +1,4 @@
-<form action="fonctions/modifier.php.php" class ='txt' method="post">
+<form action="fonctions/modifier.php.php" method="post">
 
     <div class="div-g"><!-- -------------------------------------------DIV-GAUCHE--------------------------------------------- -->
 
@@ -126,8 +126,8 @@
             <p>donnée actuelle : <?php echo $num;?><p>
         </div>
 
-        <div class=buttons>            
-            <div class="l">
+        <div class=flex>            
+            <div class="l1">
                 <input type="hidden" name="edit">
                 <input class="bouton-modif" type="submit" value="Enregistrer">
             </div>
@@ -144,7 +144,7 @@
                 }
             ?>
 
-            <div class="r">
+            <div class="r1">
                 <input type="hidden" name="delete">
                 <input class="bouton-supp" type="submit" value="Supprimer">
             </div>
