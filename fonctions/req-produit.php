@@ -78,13 +78,7 @@
 
 
     // unite
-    $q = "SELECT id_unite FROM user WHERE id = " . $ligne['id_user_entree'] . "";
-    $resultat = $mysqli->query($q);
-    while($row = $resultat->fetch_assoc())
-    {
-        $r = implode($row);
-    } 
-    $get_unite = "SELECT libelle FROM unite WHERE id = " . $r . "";
+    $get_unite = "SELECT libelle FROM unite WHERE id = " . $ligne['id_unite'] . "";
     $resultat = $mysqli->query($get_unite);
     while($row = $resultat->fetch_assoc())
     {

@@ -1,4 +1,4 @@
-<form action="fonctions/modifier.php.php" method="post">
+<form action="fonctions/modifier.php" class="flex-form" method="post">
 
     <div class="div-g"><!-- -------------------------------------------DIV-GAUCHE--------------------------------------------- -->
 
@@ -58,17 +58,18 @@
             <p>donnée actuelle : <?php echo $classe;?><p>
         </div>
 
-        <div>
+    </div><!-- ---------------------------------------------------------------------------------------------------- -->
+
+
+    <div class="div-d"><!-- -------------------------------------------DIV-DROITE----------------------------------------------- -->
+
+
+         <div>
             <label>Date d'entrée dans le stock :</label>
             <input type="date" name="date_entree" id="date_entree" value="<?php echo $date_entree;?>">
             <img src="images/remove.png" alt="Vider" onclick="document.getElementById('date_entree').value = ''">
             <p>donnée actuelle : <?php echo $date_entree;?><p>
         </div>
-
-    </div><!-- ---------------------------------------------------------------------------------------------------- -->
-
-
-    <div class="div-d"><!-- -------------------------------------------DIV-DROITE----------------------------------------------- -->
 
         <div>
             <label>Personne l'ayant entré dans le stock :</label>
@@ -127,7 +128,7 @@
         </div>
 
         <div class=flex>            
-            <div class="l1">
+            <div class="b1">
                 <input type="hidden" name="edit">
                 <input class="bouton-modif" type="submit" value="Enregistrer">
             </div>
@@ -136,7 +137,7 @@
                 if (!$entame) {
                     echo
                     '
-                    <div>
+                    <div class="b2">
                         <input type="hidden" name="delete">
                         <input class="bouton-retirer" type="submit" value="Retirer">
                     </div>
@@ -144,7 +145,7 @@
                 }
             ?>
 
-            <div class="r1">
+            <div class="b3">
                 <input type="hidden" name="delete">
                 <input class="bouton-supp" type="submit" value="Supprimer">
             </div>

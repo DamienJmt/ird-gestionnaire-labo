@@ -1,4 +1,4 @@
-<form action="fonctions/modifier.php.php" class ='txt' method="post">
+<form action="fonctions/modifier.php.php" class ='flex-form' method="post">
 
 <div class="div-g"><!-- -------------------------------------------DIV-GAUCHE--------------------------------------------- -->
 

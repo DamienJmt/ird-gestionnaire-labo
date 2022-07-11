@@ -189,12 +189,10 @@ h1 {
 
 /* ------------------------------------------FORM------------------------------------------ */
 
-form {
 
-}
-
-form div {
-    margin-top: 3%;
+form div div {
+    margin-bottom: 7%;
+    margin-left: 7%;
 }
 
 form div label {
@@ -208,8 +206,8 @@ form div label .choix {
 
 form div img {
     vertical-align: middle;
-    width: 1.2%;
-    height: 1.2%;
+    width: 2.5%;
+    height: 2.5%;
 }
 
 form div p {
@@ -219,32 +217,48 @@ form div p {
     margin-left: 2%;
 }
 
+.flex-form {
+    display: flex;
+    justify-content: right;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    flex-grow: 1;
+    width: 100%;
+}
+
 .div-g {
     left:0;
     margin-right: auto;
+
 }
 
 .div-d {
     right:0;
     margin-left: auto;
+
 }
 
 .flex {
-    background-color: white;
     display:flex;
     justify-content: right;
-    margin-left: 2%;
+    margin-left: 45px;
     margin-right: auto;
     flex-grow: 1;
-    width: 30%;
+    width: 50%;
 }
 
-.r1 {
+.b1 {
     right:0;
     margin-left: auto;
 }
 
-.l1 {
+.b2 {
+    margin-left: auto;
+}
+
+
+.b3 {
     left:0;
     margin-right: auto;
 }
