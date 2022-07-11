@@ -14,7 +14,43 @@
 
         <h2>Liste de tous les produits entamés :</h2>
 
+        <table id="table1">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Marque</th>
+                    <th>Conditionnement</th>
+                    <th>Lieu</th>
+                    <th>Etagère</th>
+                    <th>Unité</th>
+                    <th>Classe de danger</th>
+                    <th>Remarque</th>
+                    <th class="reduit" style="text-align: center;">Voir</th>
+                    <th class="reduit" style="text-align: center;">Supprimer</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $mysqli = new mysqli($db_host, $db_username, $db_password,$db_name);
+                $mysqli->set_charset("utf8");
+                $requete = "SELECT * FROM produit WHERE entame=1";
+                $resultat = $mysqli->query($requete);
+                while ($ligne = $resultat->fetch_assoc()) 
+                {
 
+                    include_once $racine .'/fonctions/req-produit.php';
+
+                    ?>
+
+                    <?php include_once $racine .'/include/ligne-entame.php';?>
+                    
+                    <?php
+
+                }
+                $mysqli->close();
+                ?>
+            </tbody>
+        </table>
 
     </div>
 

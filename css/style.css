@@ -133,8 +133,15 @@ nav li a:hover {
     height: 32px;
     width: 32px;
     display: block;
-    margin: auto;
-}
+    margin: auto;   
+  }
+
+  #table1 tr input:hover {
+    height: 32px;
+    width: 32px;
+    display: block;
+    margin: auto;   
+  }
   
   #table1 th {
     padding-top: 12px;
@@ -217,6 +224,12 @@ form div p {
     vertical-align: middle; */
 }
 
+.buttons {
+    background-color: #ddd;
+    height: 10%;
+    display: inline-block ;
+}
+
 /* ----------------------------------------------------------------------------------------- */
 
 .bouton-modif {
@@ -225,11 +238,21 @@ form div p {
     font-size: 130%;
     border-color: #174d5e;
     width: 8%;
+    display: block;
 }
 
 .bouton-supp {
     margin-left: 2%;
     background-color: rgb(240, 71, 71);
+    font-size: 130%;
+    border-color: #174d5e;
+    width: 8%;
+    display: block;
+}
+
+.bouton-retirer {
+    margin-left: 2%;
+    background-color: rgb(110, 161, 209);
     font-size: 130%;
     border-color: #174d5e;
     width: 8%;
