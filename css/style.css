@@ -7,8 +7,8 @@ html {
     color: white;
 }
 
-.r{float: right;}
-.l{float: left;}
+.r1{float: right;}
+.l1{float: left;}
 
 /* ------------------------------------------HEADER------------------------------------------ */
 header {
@@ -49,6 +49,7 @@ body {
     margin:0; 
     padding: 0;
     overflow: auto; /* Enable scrolling if the sidenav has too much content */
+    background-color: #ddd;
 }
 
 
@@ -123,13 +124,13 @@ nav li a:hover {
   }
   
   #table1 td, #table1 th {
-    border: 1px solid #ddd;
+    border: 1px solid rgb(167, 167, 167);
     padding: 8px;
   }
   
   #table1 tr:nth-child(even){background-color: #f2f2f2;}
   
-  #table1 tr:hover {background-color: #ddd;}
+  #table1 tr:hover {background-color: rgb(191, 215, 231);}
 
   #table1 tr img {
     height: 32px;
@@ -188,6 +189,10 @@ h1 {
 
 /* ------------------------------------------FORM------------------------------------------ */
 
+form {
+
+}
+
 form div {
     margin-top: 3%;
 }
@@ -215,43 +220,64 @@ form div p {
 }
 
 .div-g {
-    /* background-color: goldenrod; */
+    left:0;
+    margin-right: auto;
 }
 
 .div-d {
-    /* background-color: #308E97;
-    margin-left: 45%;
-    display: block;
-    float: right;
-    vertical-align: middle; */
+    right:0;
+    margin-left: auto;
 }
 
-.buttons {
-    /* background-color: #ddd; */
-    display: inline-block ;
-    width: 98%;
+.flex {
+    background-color: white;
+    display:flex;
+    justify-content: right;
+    margin-left: 2%;
+    margin-right: auto;
+    flex-grow: 1;
+    width: 30%;
+}
+
+.r1 {
+    right:0;
+    margin-left: auto;
+}
+
+.l1 {
+    left:0;
+    margin-right: auto;
 }
 
 .bouton-modif {
-    margin-left: 2%;
     background-color: rgb(101, 185, 101);
     font-size: 130%;
-    border-color: #174d5e;
+    border-color: #095a14;
 }
+.bouton-modif:hover {
+    box-shadow: #09475a 2px 2px 8px;
+}
+
 
 .bouton-retirer {
-    margin-left: 2%;
     background-color: rgb(110, 161, 209);
     font-size: 130%;
-    border-color: #174d5e;
+    border-color: #17385e;
+}
+.bouton-retirer:hover {
+    box-shadow: #09475a 2px 2px 8px;
 }
 
+
 .bouton-supp {
-    margin-left: 2%;
     background-color: rgb(240, 71, 71);
     font-size: 130%;
     border-color: #174d5e;
 }
+.bouton-supp:hover {
+    box-shadow: #5a0909 2px 2px 8px;
+}
+
 
 /* ----------------------------------------------------------------------------------------- */
 
@@ -264,5 +290,9 @@ form div p {
     border-color: #174d5e;
     width: 25%;
     margin-bottom: 1%;
+}
+
+.bouton-ajouter:hover {
+    box-shadow: #095a14 -3px 3px 8px;
 }
 
