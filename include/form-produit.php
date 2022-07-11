@@ -127,7 +127,7 @@
         </div>
 
         <div class=buttons>            
-            <div>
+            <div class="l">
                 <input type="hidden" name="edit">
                 <input class="bouton-modif" type="submit" value="Enregistrer">
             </div>
@@ -137,21 +137,20 @@
                     echo
                     '
                     <div>
-                    <input type="hidden" name="delete">
-                    <input class="bouton-retirer" type="submit" value="Retirer">
+                        <input type="hidden" name="delete">
+                        <input class="bouton-retirer" type="submit" value="Retirer">
                     </div>
                     ';
                 }
             ?>
 
-            <div>
+            <div class="r">
                 <input type="hidden" name="delete">
                 <input class="bouton-supp" type="submit" value="Supprimer">
             </div>
         </div>
 
         <br><br><br>
-
 </div><!-- ---------------------------------------------------------------------------------------------------- -->
 
 </form>
