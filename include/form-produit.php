@@ -11,7 +11,29 @@
 
         <div>
             <label>Marque :</label>
-            <input type="text" name="marque" id="marque" value="<?php echo $marque;?>">
+            <?php
+            $req = "SELECT id FROM marque WHERE libelle ='$marque'";
+            $resultat = $mysqli->query($req);
+            while ($row = $resultat->fetch_assoc())
+            {
+                $id_marque = implode($row);
+            }
+            ?>
+            <select name="marque" id="marque">
+            <?php
+            $req = "SELECT * FROM marque";
+            $resultat = $mysqli->query($req);
+            while ($row = $resultat->fetch_assoc())
+            {
+                echo '<option value="' .$row['id']. '" ';
+                if ($row['id']==$id_marque) {
+                    echo 'selected';
+                }
+                echo ' >' .$row['libelle']. '</option>';
+            }
+            ?>
+
+            </select>
             <img src="images/remove.png" alt="Vider" onclick="document.getElementById('marque').value = ''">
             <p>donnée actuelle : <?php echo $marque;?><p>
         </div>
@@ -39,23 +61,90 @@
 
         <div>
             <label>Etagère :</label>
-            <input type="text" name="etagere" id="etagere" value="<?php echo $etagere;?>">
+            <?php
+            $req = "SELECT id FROM etagere WHERE libelle ='$etagere'";
+            $resultat = $mysqli->query($req);
+            while ($row = $resultat->fetch_assoc())
+            {
+                $id_etagere = implode($row);
+            }
+            ?>
+            <select name="etagere" id="etagere">
+            <?php
+            $req = "SELECT * FROM etagere";
+            $resultat = $mysqli->query($req);
+            while ($row = $resultat->fetch_assoc())
+            {
+                echo '<option value="' .$row['id']. '" ';
+                if ($row['id']==$id_etagere) {
+                    echo 'selected';
+                }
+                echo ' >' .$row['libelle']. '</option>';
+            }
+            ?>
+
+            </select>
             <img src="images/remove.png" alt="Vider" onclick="document.getElementById('etagere').value = ''">
             <p>donnée actuelle : <?php echo $etagere;?><p>
         </div>
+        
 
         <div>
             <label>Unité :</label>
-            <input type="text" name="unite" id="unite" value="<?php echo $unite;?>">
+            <?php
+            $req = "SELECT id FROM unite WHERE libelle ='$unite'";
+            $resultat = $mysqli->query($req);
+            while ($row = $resultat->fetch_assoc())
+            {
+                $id_unite = implode($row);
+            }
+            ?>
+            <select name="unite" id="unite">
+            <?php
+            $req = "SELECT * FROM unite";
+            $resultat = $mysqli->query($req);
+            while ($row = $resultat->fetch_assoc())
+            {
+                echo '<option value="' .$row['id']. '" ';
+                if ($row['id']==$id_unite) {
+                    echo 'selected';
+                }
+                echo ' >' .$row['libelle']. '</option>';
+            }
+            ?>
+
+            </select>
             <img src="images/remove.png" alt="Vider" onclick="document.getElementById('unite').value = ''">
             <p>donnée actuelle : <?php echo $unite;?><p>
         </div>
 
         <div>
             <label>Classe de danger :</label>
-            <input type="text" name="classe" id="classe" value="<?php echo $classe;?>">
-            <img src="images/remove.png" alt="Vider" onclick="document.getElementById('classe').value = ''">
-            <p>donnée actuelle : <?php echo $classe;?><p>
+            <?php
+            $req = "SELECT id FROM classe_de_danger WHERE libelle ='$classe_de_danger'";
+            $resultat = $mysqli->query($req);
+            while ($row = $resultat->fetch_assoc())
+            {
+                $id_classe_de_danger = implode($row);
+            }
+            ?>
+            <select name="classe_de_danger" id="classe_de_danger">
+            <?php
+            $req = "SELECT * FROM classe_de_danger";
+            $resultat = $mysqli->query($req);
+            while ($row = $resultat->fetch_assoc())
+            {
+                echo '<option value="' .$row['id']. '" ';
+                if ($row['id']==$id_classe_de_danger) {
+                    echo 'selected';
+                }
+                echo ' >' .$row['libelle']. '</option>';
+            }
+            ?>
+
+            </select>
+            <img src="images/remove.png" alt="Vider" onclick="document.getElementById('classe_de_danger').value = ''">
+            <p>donnée actuelle : <?php echo $classe_de_danger;?><p>
         </div>
 
     </div><!-- ---------------------------------------------------------------------------------------------------- -->
@@ -73,7 +162,29 @@
 
         <div>
             <label>Personne l'ayant entré dans le stock :</label>
-            <input type="text" name="user_entree" id="user_entree" value="<?php echo $user_entree;?>">
+            <?php
+            $req = "SELECT id FROM user WHERE initiales ='$user_entree'";
+            $resultat = $mysqli->query($req);
+            while ($row = $resultat->fetch_assoc())
+            {
+                $id_user_entree = implode($row);
+            }
+            ?>
+            <select name="user_entree" id="user_entree">
+            <?php
+            $req = "SELECT id,initiales FROM user";
+            $resultat = $mysqli->query($req);
+            while ($row = $resultat->fetch_assoc())
+            {
+                echo '<option value="' .$row['id']. '" ';
+                if ($row['id']==$id_user_entree) {
+                    echo 'selected';
+                }
+                echo ' >' .$row['initiales']. '</option>';
+            }
+            ?>
+
+            </select>
             <img src="images/remove.png" alt="Vider" onclick="document.getElementById('user_entree').value = ''">
             <p>donnée actuelle : <?php echo $user_entree;?><p>
         </div>
@@ -89,12 +200,12 @@
             <label>Entamé ou non :</label>
             <?php 
                 if ($entame) {
-                    $v=true;
+                    $v="checked";
                 } else {
-                    $v=false;
+                    $v="";
                 }
             ?>
-            <input type="checkbox" name="entame" onload="javascript:this.checked=true" />
+            <input type="checkbox" name="entame" <?php echo $v;?> />
             <p>donnée actuelle : 
                 <?php 
                     if ($entame) {
@@ -115,7 +226,29 @@
 
         <div>
             <label>Personne l'ayant sorti du stock :</label>
-            <input type="text" name="user_sortie" id="user_sortie" value="<?php echo $user_sortie;?>">
+            <?php
+            $req = "SELECT id FROM user WHERE initiales ='$user_sortie'";
+            $resultat = $mysqli->query($req);
+            while ($row = $resultat->fetch_assoc())
+            {
+                $id_user_sortie = implode($row);
+            }
+            ?>
+            <select name="user_sortie" id="user_sortie">
+            <?php
+            $req = "SELECT id,initiales FROM user";
+            $resultat = $mysqli->query($req);
+            while ($row = $resultat->fetch_assoc())
+            {
+                echo '<option value="' .$row['id']. '" ';
+                if ($row['id']==$id_user_sortie) {
+                    echo 'selected';
+                }
+                echo ' >' .$row['libelle']. '</option>';
+            }
+            ?>
+
+            </select>
             <img src="images/remove.png" alt="Vider" onclick="document.getElementById('user_sortie').value = ''">
             <p>donnée actuelle : <?php echo $user_sortie;?><p>
         </div>
