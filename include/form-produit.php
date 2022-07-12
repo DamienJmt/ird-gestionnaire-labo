@@ -171,19 +171,18 @@
             }
             ?>
             <select name="user_entree" id="user_entree">
-            <?php
-            $req = "SELECT id,initiales FROM user";
-            $resultat = $mysqli->query($req);
-            while ($row = $resultat->fetch_assoc())
-            {
-                echo '<option value="' .$row['id']. '" ';
-                if ($row['id']==$id_user_entree) {
-                    echo 'selected';
+                <?php
+                $req = "SELECT id,initiales FROM user";
+                $resultat = $mysqli->query($req);
+                while ($row = $resultat->fetch_assoc())
+                {
+                    $s = '';
+                    if ($row['id']==$id_user_entree) {
+                        $s = 'selected';
+                    }
+                    echo '<option value="' .$row['id']. '" ' .$s. '>' .$row['initiales']. '</option>';
                 }
-                echo ' >' .$row['initiales']. '</option>';
-            }
-            ?>
-
+                ?>
             </select>
             <img src="images/remove.png" alt="Vider" onclick="document.getElementById('user_entree').value = ''">
             <p>donnée actuelle : <?php echo $user_entree;?><p>
@@ -235,19 +234,19 @@
             }
             ?>
             <select name="user_sortie" id="user_sortie">
-            <?php
-            $req = "SELECT id,initiales FROM user";
-            $resultat = $mysqli->query($req);
-            while ($row = $resultat->fetch_assoc())
-            {
-                echo '<option value="' .$row['id']. '" ';
-                if ($row['id']==$id_user_sortie) {
-                    echo 'selected';
+            <option value="0" <?php if (!$user_sortie) { echo 'selected'; }?>>N/A</option>
+                <?php
+                $req = "SELECT id,initiales FROM user";
+                $resultat = $mysqli->query($req);
+                while ($row = $resultat->fetch_assoc())
+                {
+                    $s = '';
+                    if ($row['id']==$id_user_sortie) {
+                        $s = 'selected';
+                    }
+                    echo '<option value="' .$row['id']. '" ' .$s. '>' .$row['initiales']. '</option>';
                 }
-                echo ' >' .$row['libelle']. '</option>';
-            }
-            ?>
-
+                ?>
             </select>
             <img src="images/remove.png" alt="Vider" onclick="document.getElementById('user_sortie').value = ''">
             <p>donnée actuelle : <?php echo $user_sortie;?><p>
