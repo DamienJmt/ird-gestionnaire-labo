@@ -21,53 +21,52 @@ if(isset($_POST['edit']))
     // compléter ça
 
     // récup ID marque
-    $get_marque = "SELECT id FROM marque WHERE libelle=" . $marque . "";
-    $resultat = $mysqli->query($get_marque);
-    while($row = $resultat->fetch_assoc())
-    {
-        $marque = implode($row);
-    } 
+    // $get_marque = "SELECT id FROM marque WHERE libelle=" . $marque . "";
+    // $resultat = $mysqli->query($get_marque);
+    // while($row = $resultat->fetch_assoc())
+    // {
+    //     $marque = implode($row);
+    // } 
 
     // récup ID etagere
-    $get_etagere = "SELECT id FROM etagere WHERE libelle=" . $etagere . "";
-    $resultat = $mysqli->query($get_etagere);
-    while($row = $resultat->fetch_assoc())
-    {
-        $etagere = implode($row);
-    } 
+    // $get_etagere = "SELECT id FROM etagere WHERE libelle=" . $etagere . "";
+    // $resultat = $mysqli->query($get_etagere);
+    // while($row = $resultat->fetch_assoc())
+    // {
+    //     $etagere = implode($row);
+    // } 
 
     // récup ID user_entree
-    $get_user_entree = "SELECT id FROM user WHERE libelle=" . $user_entree . "";
-    $resultat = $mysqli->query($get_user_entree);
-    while($row = $resultat->fetch_assoc())
-    {
-        $user_entree = implode($row);
-    } 
+    // $get_user_entree = "SELECT id FROM user WHERE libelle=" . $user_entree . "";
+    // $resultat = $mysqli->query($get_user_entree);
+    // while($row = $resultat->fetch_assoc())
+    // {
+    //     $user_entree = implode($row);
+    // } 
     
     // récup ID user_sortie
-    $get_user_sortie = "SELECT id FROM user WHERE libelle=" . $user_sortie . "";
-    $resultat = $mysqli->query($get_user_sortie);
-    while($row = $resultat->fetch_assoc())
-    {
-        $user_sortie = implode($row);
-    } 
+    // $get_user_sortie = "SELECT id FROM user WHERE libelle=" . $user_sortie . "";
+    // $resultat = $mysqli->query($get_user_sortie);
+    // while($row = $resultat->fetch_assoc())
+    // {
+    //     $user_sortie = implode($row);
+    // } 
     
     // récup ID unite
-    $get_unite = "SELECT id FROM unite WHERE libelle=" . $unite . "";
-    $resultat = $mysqli->query($get_unite);
-    while($row = $resultat->fetch_assoc())
-    {
-        $unite = implode($row);
-    } 
+    // $get_unite = "SELECT id FROM unite WHERE libelle=" . $unite . "";
+    // $resultat = $mysqli->query($get_unite);
+    // while($row = $resultat->fetch_assoc())
+    // {
+    //     $unite = implode($row);
+    // } 
     
     // récup ID classe_de_danger
-    $get_classe_de_danger = "SELECT id FROM classe_de_danger WHERE libelle=" . $classe_de_danger . "";
-    $resultat = $mysqli->query($get_classe_de_danger);
-    while($row = $resultat->fetch_assoc())
-    {
-        $classe_de_danger = implode($row);
-    } 
-    
+    // $get_classe_de_danger = "SELECT id FROM classe_de_danger WHERE libelle=" . $classe_de_danger . "";
+    // $resultat = $mysqli->query($get_classe_de_danger);
+    // while($row = $resultat->fetch_assoc())
+    // {
+    //     $classe_de_danger = implode($row);
+    // } 
 
     $query = "UPDATE produit SET nom ='$nom', 
                                  reference ='$reference',
@@ -89,12 +88,12 @@ if(isset($_POST['edit']))
     if($query_run)
     {
         $_SESSION['status'] = "Mise a jour effectué";
-        header("Location: liste-produit.php");
+        header("Location: ../liste-produit.php?succes-mise-a-jour");
     }
     else
     {
         $_SESSION['status'] = "Echec !";
-        header("Location: liste-produit.php");
+        header("Location: ../liste-produit.php?echec-mise-a-jour");
     }
 }
 

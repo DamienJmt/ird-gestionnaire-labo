@@ -1,4 +1,6 @@
 <form action="fonctions/modifier.php" class="flex-form" method="post">
+    <!-- -----different action selon la variable dans le bouton----- -->
+
 
     <div class="div-g"><!-- -------------------------------------------DIV-GAUCHE--------------------------------------------- -->
 
@@ -121,7 +123,7 @@
         <div>
             <label>Classe de danger :</label>
             <?php
-            $req = "SELECT id FROM classe_de_danger WHERE libelle ='$classe_de_danger'";
+            $req = "SELECT id FROM classe_de_danger WHERE libelle ='$classe'";
             $resultat = $mysqli->query($req);
             while ($row = $resultat->fetch_assoc())
             {
@@ -144,7 +146,7 @@
 
             </select>
             <img src="images/remove.png" alt="Vider" onclick="document.getElementById('classe_de_danger').value = ''">
-            <p>donnée actuelle : <?php echo $classe_de_danger;?><p>
+            <p>donnée actuelle : <?php echo $classe;?><p>
         </div>
 
     </div><!-- ---------------------------------------------------------------------------------------------------- -->
@@ -261,8 +263,9 @@
 
         <div class=flex>            
             <div class="b1">
-                <input type="hidden" name="edit">
-                <input class="bouton-modif" type="submit" value="Enregistrer">
+                <input type="hidden" name="edit" value="<?php echo $id;?>">
+                <input type="hidden" name="id">
+                <input  onclick="return confirm('Voulez-vous vraiment enregistrer les modifications effectuées ?');" class="bouton-modif" type="submit" value="Enregistrer">
             </div>
 
             <?php
@@ -271,7 +274,7 @@
                     '
                     <div class="b2">
                         <input type="hidden" name="delete">
-                        <input class="bouton-retirer" type="submit" value="Retirer">
+                        <input onclick="return confirm("Voulez-vous vraiment retirer ce produit du stock ?");" class="bouton-retirer" type="submit" value="Retirer">
                     </div>
                     ';
                 }
