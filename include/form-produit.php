@@ -263,8 +263,8 @@
 
         <div class=flex>            
             <div class="b1">
-                <input type="hidden" name="edit" value="<?php echo $id;?>">
-                <input type="hidden" name="id">
+                <input type="hidden" name="edit">
+                <input type="hidden" name="id" value="<?php echo $id;?>">
                 <input  onclick="return confirm('Voulez-vous vraiment enregistrer les modifications effectuées ?');" class="bouton-modif" type="submit" value="Enregistrer">
             </div>
 
@@ -273,7 +273,7 @@
                     echo
                     '
                     <div class="b2">
-                        <input type="hidden" name="delete">
+                        <input type="hidden" name="retirer">
                         <input onclick="return confirm("Voulez-vous vraiment retirer ce produit du stock ?");" class="bouton-retirer" type="submit" value="Retirer">
                     </div>
                     ';
