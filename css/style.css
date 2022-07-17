@@ -170,7 +170,7 @@ nav li a:hover {
 h1 {
     font-size: 60px;
     margin-bottom: 5%;
-    text-shadow: rgb(7, 46, 85) 2px 2px 7px;
+    text-shadow: rgb(7, 46, 85) 1px 1px 5px;
     color: rgb(6, 38, 70);
 }
 
