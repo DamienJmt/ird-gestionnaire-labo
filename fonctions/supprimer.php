@@ -8,7 +8,7 @@ if(isset($_POST['delete']))
 {
     $id = $_POST['id'];
 
-    $query = "";
+    $query = "DELETE * FROM produit WHERE id='$id'";
     $query_run = mysqli_query($db, $query);
     
     if($query_run)
