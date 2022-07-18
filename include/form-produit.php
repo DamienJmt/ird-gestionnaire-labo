@@ -1,5 +1,4 @@
 <form action="fonctions/modifier.php" class="flex-form" method="post">
-    <!-- -----different action selon la variable dans le bouton----- -->
 
 
     <div class="div-g"><!-- -------------------------------------------DIV-GAUCHE--------------------------------------------- -->
