@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Lun 11 Juillet 2022 à 21:52
+-- Généré le :  Lun 18 Juillet 2022 à 21:09
 -- Version du serveur :  5.7.11
 -- Version de PHP :  5.6.18
 
@@ -195,7 +195,7 @@ CREATE TABLE `produit` (
 
 INSERT INTO `produit` (`id`, `nom`, `reference`, `volume`, `date_entree`, `date_sortie`, `remarque`, `num`, `id_marque`, `id_etagere`, `id_unite`, `id_user_entree`, `entame`, `id_user_sortie`, `id_classe_de_danger`) VALUES
 (1, 'ACETONE', 'N/2271/PB15', '1L', '2022-07-06', NULL, 'Ceci est une remarque.', NULL, 2, 12, 1, 2, 0, NULL, 2),
-(2, 'ETHANOL', 'AJA214-2.5L', '2,5L', '2022-07-04', '2022-07-06', 'Ceci est une autre remarque.', 'PR 11', 8, 7, 1, 1, 1, 2, 2);
+(2, 'ETHANOL', 'AJA214-2.5L', '2,5L', '2022-07-04', '2022-07-06', 'Ceci est une autre remarque.', 'PR 11', 8, 7, 1, 2, 1, 2, 2);
 
 -- --------------------------------------------------------
 
