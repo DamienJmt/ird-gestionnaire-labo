@@ -28,38 +28,38 @@
 
     // marque
     $get_marque = "SELECT libelle FROM marque WHERE id=" . $ligne['id_marque'] . "";
-    $resultat = $mysqli->query($get_marque);
-    while($row = $resultat->fetch_assoc())
+    $result = $mysqli->query($get_marque);
+    while($row = $result->fetch_assoc())
     {
         $marque = implode($row);
     } 
                
     // etagere
     $get_etagere = "SELECT libelle FROM etagere WHERE id=" . $ligne['id_etagere'] . "";
-    $resultat = $mysqli->query($get_etagere);
-    while($row = $resultat->fetch_assoc())
+    $result = $mysqli->query($get_etagere);
+    while($row = $result->fetch_assoc())
     {
         $etagere = implode($row);
     } 
 
     // lieu
     $q = "SELECT id_lieu FROM etagere WHERE id = " . $ligne['id_etagere'] . "";
-    $resultat = $mysqli->query($q);
-    while($row = $resultat->fetch_assoc())
+    $result = $mysqli->query($q);
+    while($row = $result->fetch_assoc())
     {
         $r = implode($row);
     } 
     $get_lieu = "SELECT libelle FROM lieu WHERE id = " . $r . "";
-    $resultat = $mysqli->query($get_lieu);
-    while($row = $resultat->fetch_assoc())
+    $result = $mysqli->query($get_lieu);
+    while($row = $result->fetch_assoc())
     {
         $lieu = implode($row);
     } 
 
     // user entree
     $get_user_entree = "SELECT initiales FROM user WHERE id=" . $ligne['id_user_entree'] . "";
-    $resultat = $mysqli->query($get_user_entree);
-    while($row = $resultat->fetch_assoc())
+    $result = $mysqli->query($get_user_entree);
+    while($row = $result->fetch_assoc())
     {
         $user_entree = implode($row);
     } 
@@ -69,8 +69,8 @@
         $user_sortie = "";
     } else {
         $get_user_sortie = "SELECT initiales FROM user WHERE id=" . $ligne['id_user_sortie'] . "";
-        $resultat = $mysqli->query($get_user_sortie);
-        while($row = $resultat->fetch_assoc())
+        $result = $mysqli->query($get_user_sortie);
+        while($row = $result->fetch_assoc())
         {
             $user_sortie = implode($row);
         }   
@@ -79,8 +79,8 @@
 
     // unite
     $get_unite = "SELECT libelle FROM unite WHERE id = " . $ligne['id_unite'] . "";
-    $resultat = $mysqli->query($get_unite);
-    while($row = $resultat->fetch_assoc())
+    $result = $mysqli->query($get_unite);
+    while($row = $result->fetch_assoc())
     {
         $unite = implode($row);
     } 
@@ -90,8 +90,8 @@
 
     // classe de danger
     $get_classe = "SELECT libelle FROM classe_de_danger WHERE id=" . $ligne['id_classe_de_danger'] . "";
-    $resultat = $mysqli->query($get_classe);
-    while($row = $resultat->fetch_assoc())
+    $result = $mysqli->query($get_classe);
+    while($row = $result->fetch_assoc())
     {
         $classe = implode($row);
     } 
