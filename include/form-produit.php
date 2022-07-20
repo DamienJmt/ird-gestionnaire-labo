@@ -280,8 +280,9 @@
             ?>
 
             <div class="b3">
+                <input type="hidden" name ="id" value="<?php echo $id; ?>">
                 <input type="hidden" name="delete">
-                <input class="bouton-supp" type="submit" value="Supprimer">
+                <input onclick="return confirm('Supprimer DEFINITIVEMENT le produit ?');" class="bouton-supp" type="submit" value="Supprimer">
             </div>
         </div>
 
