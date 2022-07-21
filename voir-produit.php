@@ -14,10 +14,10 @@
     <h2>Vous pouvez ici voir et modifier les informations du produit :</h2>
 
     <?php
-        $id_produit = $_POST['id'];
+        $id = $_POST['id'];
         $mysqli = new mysqli($db_host, $db_username, $db_password,$db_name);
         $mysqli->set_charset("utf8");
-        $requete = "SELECT * FROM produit WHERE id=$id_produit";
+        $requete = "SELECT * FROM produit WHERE id=$id";
         $resultat = $mysqli->query($requete);
         while ($ligne = $resultat->fetch_assoc()) 
         {

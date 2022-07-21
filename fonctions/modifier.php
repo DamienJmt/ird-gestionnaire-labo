@@ -22,6 +22,7 @@ if(isset($_POST['edit']))
     $entame = $_POST['entame'];
     $classe_de_danger = $_POST['classe_de_danger'];
 
+    // $query = "UPDATE produit SET nom ='$nom', reference ='$reference', volume ='$volume', date_entree ='$date_entree', date_sortie ='$date_sortie', remarque ='$remarque', num ='$num', id_marque ='$marque', id_etagere ='$etagere', id_unite ='$unite', id_user_entree ='$user_entree', entame ='$entame',id_user_sortie ='$user_sortie', id_classe_de_danger ='$classe_de_danger' WHERE id='$id';";
     $query = "UPDATE produit SET nom ='$nom', 
                                  reference ='$reference', 
                                  volume ='$volume', 
@@ -31,12 +32,12 @@ if(isset($_POST['edit']))
                                  num ='$num', 
                                  id_marque ='$marque', 
                                  id_etagere ='$etagere', 
-                                 id_user_entree ='$user_entree', 
-                                 id_user_sortie ='$user_sortie', 
                                  id_unite ='$unite', 
-                                 entame ='$entame', 
+                                 id_user_entree ='$user_entree', 
+                                 entame ='$entame',
+                                 id_user_sortie ='$user_sortie', 
                                  id_classe_de_danger ='$classe_de_danger' 
-                             WHERE id='$id' ";
+                             WHERE id='$id';";
     $query_run = mysqli_query($db, $query);
     
     if($query_run)

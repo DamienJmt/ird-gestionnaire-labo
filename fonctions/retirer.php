@@ -8,6 +8,7 @@ if(isset($_POST['retirer']))
 {
     $id = $_POST['id'];
 
+    // requete: entame=1 + date du jour en auto increment + initiales_user_sortie=user_session
     $query = "";
     $query_run = mysqli_query($db, $query);
     

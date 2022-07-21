@@ -54,10 +54,8 @@
         </div>
 
         <div>
-            <label>Lieu Physique :</label>
-            <input type="text" name="lieu" id="lieu" value="<?php echo $lieu;?>">
-            <img src="images/remove.png" alt="Vider" onclick="document.getElementById('lieu').value = ''">
-            <p>donnée actuelle : <?php echo $lieu;?><p>
+            <label>Lieu Physique : <?php echo $lieu;?></label>
+            <p>(Non modifiable car lié à l'étagère)<p>
         </div>
 
         <div>
@@ -260,35 +258,39 @@
             <p>donnée actuelle : <?php echo $num;?><p>
         </div>
 
-        <div class=flex>            
-            <div class="b1">
-                <input type="hidden" name="edit">
-                <input type="hidden" name="id" value="<?php echo $id;?>">
-                <input  onclick="return confirm('Voulez-vous vraiment enregistrer les modifications effectuées ?');" class="bouton-modif" type="submit" value="Enregistrer">
-            </div>
-
-            <?php
-                if (!$entame) {
-                    echo
-                    '
-                    <div class="b2">
-                        <input type="hidden" name="retirer">
-                        <input onclick="return confirm("Voulez-vous vraiment retirer ce produit du stock ?");" class="bouton-retirer" type="submit" value="Retirer">
-                    </div>
-                    ';
-                }
-            ?>
-
-            <div class="b3">
-                <form action="../fonctions/supprimer.php" method="post">
-                    <input type="hidden" name ="id" value="<?php echo $id; ?>">
-                    <input type="hidden" name="delete">
-                    <input onclick="return confirm('Supprimer DEFINITIVEMENT le produit ?');" class="bouton-supp" type="submit" value="Supprimer">
-                </form>
-            </div>
+        <div class="b1">
+            <input type="hidden" name="edit">
+            <input type="hidden" name="id" value="<?php echo $id;?>">
+            <input  onclick="return confirm('Voulez-vous vraiment enregistrer les modifications effectuées ?');" class="bouton-modif" type="submit" value="Enregistrer">
         </div>
 
-        <br><br><br>
-</div><!-- ---------------------------------------------------------------------------------------------------- -->
+    </div><!-- ---------------------------------------------------------------------------------------------------- -->
+
 
 </form>
+
+<div class="div-g flex">            
+
+
+    <?php
+        if (!$entame) {
+            echo
+            '
+            <div class="b2">
+                <input type="hidden" name="retirer">
+                <input onclick="return confirm("Voulez-vous vraiment retirer ce produit du stock ?");" class="bouton-retirer" type="submit" value="Retirer">
+            </div>
+            ';
+        }
+    ?>
+
+    <div class="b3">
+        <form action="fonctions/supprimer.php" method="post">
+            <input type="hidden" name ="id" value="<?php echo $id; ?>">
+            <input type="hidden" name="delete">
+            <input onclick="return confirm('Supprimer DEFINITIVEMENT le produit ?');" class="bouton-supp" type="submit" value="Supprimer">
+        </form>
+    </div>
+</div>
+
+

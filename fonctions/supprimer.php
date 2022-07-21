@@ -13,17 +13,13 @@ if(isset($_POST['delete']))
     
     if($query_run)
     {
-        $_SESSION['status'] = "Mise a jour effectuée !";
-        $statut  = $_SESSION['status'];
-        echo '<script> alert("'.$statut.'"); </script>';
-        header("Location: ../index.php");
+        $_SESSION['delete'] = "Produit supprimé !";
+        header("Location: ../liste-produit.php");
     }
     else
     {
-        $_SESSION['status'] = "Echec de la suppression!";
-        $statut  = $_SESSION['status'];
-        echo '<script> alert("'.$statut.'"); </script>';
-        header("Location: ../index.php");
+        $_SESSION['delete'] = "Echec de la suppression !";
+        header("Location: ../liste-produit.php");
     }
 }
 

@@ -9,6 +9,13 @@
 
     <?php include_once $racine .'/include/header.php' ?>
     <?php include_once $racine .'/include/nav.php' ?>
+    <?php
+        if(isset($_SESSION['delete']))
+        {
+            echo '<script> alert("'.$_SESSION['delete'].'"); </script>';
+            unset($_SESSION['delete']);
+        }
+    ?>
 
     <div class="article">
 
@@ -183,6 +190,8 @@
         </table>
 
     </div>
+
+
 
 </body>
 </html>
