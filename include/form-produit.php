@@ -194,35 +194,35 @@
             <p>donnée actuelle : <?php echo $remarque;?><p>
         </div>
 
-        <div>
-            <label>Entamé ou non :</label>
-            <?php 
-                if ($entame) {
-                    $v="checked";
-                } else {
-                    $v="";
-                }
-            ?>
-            <input type="checkbox" name="entame" <?php echo $v;?> />
-            <p>donnée actuelle : 
-                <?php 
-                    if ($entame) {
-                        echo "Oui";
-                    } else {
-                        echo "Non";
-                    }
-                ?>
-            <p>
-        </div>
 
         <div>
+            <?php 
+                if ($entame) {
+                    $v="Oui";
+                    $hide='';
+                    $hide2='hidden';
+                } else {
+                    $v="Non";
+                    $hide='hidden';
+                    $hide2='';
+                }
+            ?>
+            <label>Entamé ou non : <?php echo $v;?></label>
+            <input type="hidden" name ="entame" value="<?php echo $entame; ?>">
+            <p <?php echo $hide2;?>>(Modifiable seulement grâce aux boutons "Retirer")<p>
+            <p <?php echo $hide2;?>>(Les champs "Date de sortie du stock", "Personne l'ayant sorti du stock" <br>et "Numéro" seront modifiables seulement une fois le produit retiré)    <p>
+        </div>
+
+
+        
+        <div <?php echo $hide;?>>
             <label>Date de sortie du stock :</label>
             <input type="date" name="date_sortie" id="date_sortie" value="<?php echo $date_sortie;?>">
             <img src="images/remove.png" alt="Vider" onclick="document.getElementById('date_sortie').value = ''">
             <p>donnée actuelle : <?php echo $date_sortie;?><p>
         </div>
 
-        <div>
+        <div <?php echo $hide;?>>
             <label>Personne l'ayant sorti du stock :</label>
             <?php
             $req = "SELECT id FROM user WHERE initiales ='$user_sortie'";
@@ -251,7 +251,7 @@
             <p>donnée actuelle : <?php echo $user_sortie;?><p>
         </div>
 
-        <div>
+        <div <?php echo $hide;?>>
             <label>Numéro :</label>
             <input type="text" name="num" id="num" value="<?php echo $num;?>">
             <img src="images/remove.png" alt="Vider" onclick="document.getElementById('num').value = ''">
