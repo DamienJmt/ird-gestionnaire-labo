@@ -24,6 +24,7 @@ if(isset($_POST['email']) && isset($_POST['pass']))
 
          $get_nom = "SELECT nom FROM user WHERE username = '$username'";
          $get_prenom = "SELECT prenom FROM user WHERE username = '$username'";
+         $get_id = "SELECT id FROM user WHERE username = '$username'";
 
          mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
          $db = new mysqli($db_host, $db_username, $db_password,$db_name);
@@ -37,6 +38,11 @@ if(isset($_POST['email']) && isset($_POST['pass']))
          $result = $db->query($get_prenom);
          foreach($result as $row) {
          $_SESSION['prenom'] = $row['prenom'];
+         }
+
+         $result = $db->query($get_id);
+         foreach($result as $row) {
+         $_SESSION['id'] = $row['id'];
          }
 
          header('Location: index.php');

@@ -271,18 +271,23 @@
 
 <div class="div-g flex">            
 
-
     <?php
-        if (!$entame) {
-            echo
-            '
-            <div class="b2">
-                <input type="hidden" name="retirer">
-                <input onclick="return confirm("Voulez-vous vraiment retirer ce produit du stock ?");" class="bouton-retirer" type="submit" value="Retirer">
-            </div>
-            ';
+        if ($entame='1') {
+            $hide = "hidden";
+        } else {
+            $hide = "";
         }
-    ?>
+    ?>    
+
+    <div <?php echo $hide; ?> class="b2">
+        <form action="fonctions/retirer.php" method="post">
+            <input type="hidden" name ="id" value="<?php echo $id; ?>">
+            <input type="hidden" name="retirer">
+            <input onclick="return confirm("Supprimer DEFINITIVEMENT le produit ?");" class="bouton-retirer" type="submit" value="Retirer">
+        </form>
+    </div>
+
+    
 
     <div class="b3">
         <form action="fonctions/supprimer.php" method="post">

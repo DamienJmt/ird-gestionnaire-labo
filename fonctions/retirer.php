@@ -9,18 +9,21 @@ if(isset($_POST['retirer']))
     $id = $_POST['id'];
 
     // requete: entame=1 + date du jour en auto increment + initiales_user_sortie=user_session
-    $query = "";
+    // DATE( NOW() )
+    $id_s = $_SESSION['id'];
+    $num_p = "PR " . $id;
+    $query = "UPDATE produit SET entame = '1', date_sortie = SELECT DATE( NOW() ), id_user_sortie = '$id_s', num = '$num_p' WHERE id='$id';";
     $query_run = mysqli_query($db, $query);
     
     if($query_run)
     {
-        $_SESSION['status'] = "Mise a jour effectuée !";
-        header("Location: ../liste-produit.php?succes-mise-a-jour");
+        $_SESSION['retirer'] = "Produit retirer avec succès !";
+        header("Location: ../liste-produit.php");
     }
     else
     {
-        $_SESSION['status'] = "Echec !";
-        header("Location: ../liste-produit.php?echec-mise-a-jour");
+        $_SESSION['retirer'] = "Echec, le produit n'a pas été retiré !";
+        header("Location: ../liste-produit.php");
     }
 }
 

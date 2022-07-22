@@ -15,6 +15,18 @@
             echo '<script> alert("'.$_SESSION['delete'].'"); </script>';
             unset($_SESSION['delete']);
         }
+
+        if(isset($_SESSION['edit']))
+        {
+            echo '<script> alert("'.$_SESSION['edit'].'"); </script>';
+            unset($_SESSION['edit']);
+        }
+
+        if(isset($_SESSION['retirer']))
+        {
+            echo '<script> alert("'.$_SESSION['retirer'].'"); </script>';
+            unset($_SESSION['retirer']);
+        }
     ?>
 
     <div class="article">
@@ -169,7 +181,8 @@
                     <td>                        
                         <form action="fonctions/retirer.php" method="post">
                             <input type="hidden" name ="id" value="<?php echo $id; ?>">
-                            <input type="image" id="image" alt="Retirer" class="reduit2" src="images/retirer.png">
+                            <input type="hidden" name="retirer">
+                            <input onclick="return confirm('Voulez vous vraiment retirer ce produit du stock ?');" type="image" id="image" alt="Retirer" class="reduit2" src="images/retirer.png">
                         </form>
                     </td>
 
