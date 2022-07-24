@@ -272,7 +272,7 @@
 <div class="div-g flex">            
 
     <?php
-        if ($entame='1') {
+        if ($entame) {
             $hide = "hidden";
         } else {
             $hide = "";
