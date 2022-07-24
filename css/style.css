@@ -139,12 +139,12 @@ nav li a:hover {
     margin: auto;   
   }
 
-  #table1 tr input:hover {
+  /* #table1 tr input:hover {
     height: 32px;
     width: 32px;
     display: block;
     margin: auto;   
-  }
+  } */
   
   #table1 th {
     padding-top: 12px;

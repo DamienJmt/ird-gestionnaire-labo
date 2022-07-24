@@ -269,7 +269,7 @@
 
 </form>
 
-<div class="div-g flex">            
+<div class="flex">            
 
     <?php
         if ($entame) {
