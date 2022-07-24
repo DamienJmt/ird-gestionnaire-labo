@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Lun 18 Juillet 2022 à 21:09
+-- Généré le :  Dim 24 Juillet 2022 à 21:10
 -- Version du serveur :  5.7.11
 -- Version de PHP :  5.6.18
 
@@ -194,8 +194,25 @@ CREATE TABLE `produit` (
 --
 
 INSERT INTO `produit` (`id`, `nom`, `reference`, `volume`, `date_entree`, `date_sortie`, `remarque`, `num`, `id_marque`, `id_etagere`, `id_unite`, `id_user_entree`, `entame`, `id_user_sortie`, `id_classe_de_danger`) VALUES
-(1, 'ACETONE', 'N/2271/PB15', '1L', '2022-07-06', NULL, 'Ceci est une remarque.', NULL, 2, 12, 1, 2, 0, NULL, 2),
-(2, 'ETHANOL', 'AJA214-2.5L', '2,5L', '2022-07-04', '2022-07-06', 'Ceci est une autre remarque.', 'PR 11', 8, 7, 1, 2, 1, 2, 2);
+(2, 'ETHANOL', 'AJA214-2.5L', '2,5L', '2022-07-04', '2022-07-06', 'Ceci est une autre remarque.', 'PR 11', 8, 7, 1, 2, 1, 2, 2),
+(3, 'ACETONE2', 'N/2271/PB15', '1L', '2022-07-06', NULL, 'Ceci est une remarque2.', NULL, 2, 12, 1, 2, 0, NULL, 2),
+(4, 'eqsd1', 'qsd', 'qsd', '2022-07-06', '2022-07-19', 'qsd', 'qsd', 1, 1, 1, 1, 1, 1, 1),
+(5, 'ACETONE', 'N/2271/PB15', '1L', '2022-07-06', NULL, 'Ceci est une remarque1.', NULL, 2, 12, 1, 2, 0, NULL, 2),
+(6, 'ACETONE3', 'N/2271/PB15', '1L', '2022-07-06', NULL, 'Ceci est une remarque3.', NULL, 2, 12, 1, 2, 0, NULL, 2),
+(17, 'addddddddd10', 'dddqsf', 'ddddqfqsfd', '2022-07-02', NULL, 'ddddddddd', NULL, 4, 16, 8, 2, 0, NULL, 10),
+(18, 'ddddddddd11', 'ddddddddd', 'ddddddddd', '2022-07-06', NULL, 'ddddddddd', NULL, 2, 12, 1, 2, 0, NULL, 2),
+(19, 'ddddddddd12', 'ddddddddd', 'ddddddddd', '2022-07-06', NULL, 'ddddddddd', NULL, 2, 12, 1, 2, 0, NULL, 2),
+(20, 'ddddddddd13', 'ddddddddd', 'ddddddddd', '2022-07-06', NULL, 'ddddddddd', NULL, 2, 12, 1, 2, 0, NULL, 2),
+(21, 'ddddddddd14', 'ddddddddd', 'ddddddddd', '2022-07-06', NULL, 'ddddddddd', NULL, 2, 12, 1, 2, 0, NULL, 2),
+(22, 'ddddddddd15', 'ddddddddd', 'ddddddddd', '2022-07-06', NULL, 'ddddddddd', NULL, 2, 12, 1, 2, 0, NULL, 2),
+(23, 'ddddddddd16', 'ddddddddd', 'ddddddddd', '2022-07-06', NULL, 'ddddddddd', NULL, 2, 12, 1, 2, 0, NULL, 2),
+(24, 'ddddddddd17', 'ddddddddd', 'ddddddddd', '2022-07-06', NULL, 'ddddddddd', NULL, 2, 12, 1, 2, 0, NULL, 2),
+(25, 'ddddddddd18', 'ddddddddd', 'ddddddddd', '2022-07-06', NULL, 'ddddddddd', NULL, 2, 12, 1, 2, 0, NULL, 2),
+(26, 'qsd2', 'qsd', 'qsd', '2022-07-06', '2022-07-19', 'qsd', 'qsd', 1, 1, 1, 1, 1, 1, 1),
+(27, 'qsd3', 'qsd', 'qsd', '2022-07-06', '2022-07-19', 'qsd', 'qsd', 1, 1, 1, 1, 1, 1, 1),
+(28, 'qsd5', 'qsd', 'qsd', '2022-07-06', '2022-07-19', 'qsd', 'qsd', 1, 1, 1, 1, 1, 1, 1),
+(29, 'qsd4', 'qsd', 'qsd', '2022-07-06', '2022-07-19', 'qsd', 'qsd', 1, 1, 1, 1, 1, 1, 1),
+(30, 'ddddddddd20', 'ddddddddd', 'ddddddddd', '2022-07-06', NULL, 'ddddddddd', NULL, 2, 12, 1, 2, 0, NULL, 2);
 
 -- --------------------------------------------------------
 
@@ -347,7 +364,7 @@ ALTER TABLE `marque`
 -- AUTO_INCREMENT pour la table `produit`
 --
 ALTER TABLE `produit`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 --
 -- AUTO_INCREMENT pour la table `unite`
 --
