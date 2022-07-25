@@ -26,7 +26,7 @@
         <ol type="1">
             <li>! Faire fonctionner les boutons retirer !</li>
             <li>Mettre en place un système de tri des listes (menus déroulants avec coche)</li>
-            <li>Créer une/des table(s) dans la base de données afin d'avoir un historique de suppression des produits/déchets (éventuelles backups)</li>
+            <li>Créer une/des table(s) (produit_supp, déchet_supp) dans la base de données afin d'avoir un historique de suppression des produits/déchets (éventuelles backups)</li>
             <li>Mettre en place un système de QR code sur les étiquettes des produits/déchets pour faciliter leur gestion</li>
         </ol>
 

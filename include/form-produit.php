@@ -283,7 +283,7 @@
         <form action="fonctions/retirer.php" method="post">
             <input type="hidden" name ="id" value="<?php echo $id; ?>">
             <input type="hidden" name="retirer">
-            <input onclick="return confirm("Supprimer DEFINITIVEMENT le produit ?");" class="bouton-retirer" type="submit" value="Retirer">
+            <input onclick="return confirm('Supprimer DEFINITIVEMENT le produit ?');" class="bouton-retirer" type="submit" value="Retirer">
         </form>
     </div>
 
