@@ -16,18 +16,24 @@
         <p>Gestionnaire de laboratoire pour l'IRD de Nouvelle-Calédonie.</p>
 
         <h2>Documentation :</h2>
-        <h4>Caractéristiques de développement :</h4>
+        <p>Caractéristiques de développement :</p>
         <ul type="1">
             <li>PHP (php-5.6.18)</li>
             <li>MySQL (mysql-5.7.11)</li>
         </ul>
+        <p> Développement par Damien JAMET (jamet.damien02@gmail.com)
 
         <h2>Pistes d'amélioration du service (To Do list) :</h2>
         <ol type="1">
-            <li>! Faire fonctionner les boutons retirer !</li>
-            <li>Mettre en place un système de tri des listes (menus déroulants avec coche)</li>
-            <li>Créer une/des table(s) (produit_supp, déchet_supp) dans la base de données afin d'avoir un historique de suppression des produits/déchets (éventuelles backups)</li>
-            <li>Mettre en place un système de QR code sur les étiquettes des produits/déchets pour faciliter leur gestion</li>
+            <li><b>Urgent :</b> faire foncionner l'ajout de produit</li>
+            <li><b>Urgent :</b> mettre en place la gestion des déchets (listes/actions/ajout...)</li>
+            <li><b>A faire :</b> insérer les données du labo dans la base de données</li>
+            <li>Amélioration : créer une/des table(s) (produit_supp, déchet_supp) dans la base de données afin d'avoir un historique de suppression des produits/déchets et pouvoir faire des stats (éventuelles backups)</li>
+            <li>Amélioration : droits des utilisateurs</li>
+            <li>Fonctionnalité : système de tri des listes (menus déroulants avec coche)</li>
+            <li>Fonctionnalité : système de QR code sur les étiquettes des produits/déchets pour faciliter leur gestion</li>
+            <li>Fonctionnalité : pouvoir consulter la fiche sécurité de chaque produit</li>
+            <li>Fonctionnalité : Alerte liée à la date de péremption du produit</li>
         </ol>
 
     </div>

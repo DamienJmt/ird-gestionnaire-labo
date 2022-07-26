@@ -43,13 +43,7 @@
     } 
 
     // lieu
-    $q = "SELECT id_lieu FROM etagere WHERE id = " . $ligne['id_etagere'] . "";
-    $result = $mysqli->query($q);
-    while($row = $result->fetch_assoc())
-    {
-        $r = implode($row);
-    } 
-    $get_lieu = "SELECT libelle FROM lieu WHERE id = " . $r . "";
+    $get_lieu = "SELECT libelle FROM lieu WHERE id=" . $ligne['id_lieu'] . "";
     $result = $mysqli->query($get_lieu);
     while($row = $result->fetch_assoc())
     {
@@ -78,6 +72,7 @@
 
 
     // unite
+    $id_unite_produit = $ligne['id_unite'];
     $get_unite = "SELECT libelle FROM unite WHERE id = " . $ligne['id_unite'] . "";
     $result = $mysqli->query($get_unite);
     while($row = $result->fetch_assoc())

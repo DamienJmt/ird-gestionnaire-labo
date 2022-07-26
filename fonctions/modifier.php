@@ -13,6 +13,7 @@ if(isset($_POST['edit']))
     $date_entree = $_POST['date_entree'];
     $remarque = $_POST['remarque'];
     $marque = $_POST['marque'];
+    $lieu = $_POST['lieu'];
     $etagere = $_POST['etagere'];
     $user_entree = $_POST['user_entree'];
     $unite = $_POST['unite'];
@@ -34,6 +35,7 @@ if(isset($_POST['edit']))
     // '<br>'.$date_entree,
     // '<br>'.$remarque,
     // '<br>'.$marque,
+    // '<br>'.$lieu,
     // '<br>'.$etagere,
     // '<br>'.$user_entree,
     // '<br>'.$unite,
@@ -52,6 +54,7 @@ if(isset($_POST['edit']))
                                  num = $num, 
                                  id_marque ='$marque', 
                                  id_etagere ='$etagere', 
+                                 id_lieu ='$lieu',
                                  id_unite ='$unite', 
                                  id_user_entree ='$user_entree', 
                                  entame ='$entame',

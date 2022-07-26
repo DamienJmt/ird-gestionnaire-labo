@@ -54,10 +54,34 @@
         </div>
 
         <div>
-            <label>Lieu Physique : <?php echo $lieu;?></label>
-            <p>(Non modifiable car lié à l'étagère)<p>
-        </div>
+            <label>Lieu physique :</label>
+            <?php
+            $req = "SELECT id FROM lieu WHERE libelle ='$lieu'";
+            $resultat = $mysqli->query($req);
+            while ($row = $resultat->fetch_assoc())
+            {
+                $id_lieu = implode($row);
+            }
+            ?>
+            <select name="lieu" id="lieu">
+            <?php
+            $req = "SELECT * FROM lieu";
+            $resultat = $mysqli->query($req);
+            while ($row = $resultat->fetch_assoc())
+            {
+                echo '<option value="' .$row['id']. '" ';
+                if ($row['id']==$id_lieu) {
+                    echo 'selected';
+                }
+                echo ' >' .$row['libelle']. '</option>';
+            }
+            ?>
 
+            </select>
+            <img src="images/remove.png" alt="Vider" onclick="document.getElementById('lieu').value = ''">
+            <p>donnée actuelle : <?php echo $lieu;?><p>
+        </div>
+        <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
         <div>
             <label>Etagère :</label>
             <?php
@@ -96,6 +120,7 @@
             while ($row = $resultat->fetch_assoc())
             {
                 $id_unite = implode($row);
+                $id_unite_produit = $id_unite;
             }
             ?>
             <select name="unite" id="unite">
@@ -258,7 +283,16 @@
             <p>donnée actuelle : <?php echo $num;?><p>
         </div>
 
-        <div class="b1">
+        <?php
+            $id_unite_user = $_SESSION['id_unite'];
+            if ($id_unite_produit == $id_unite_user) {
+                $hide3 = '';
+            } else {
+                $hide3 = 'hidden';
+            }
+        ?>
+
+        <div <?php echo $hide3; ?> class="b1">
             <input type="hidden" name="edit">
             <input type="hidden" name="id" value="<?php echo $id;?>">
             <input  onclick="return confirm('Voulez-vous vraiment enregistrer les modifications effectuées ?');" class="bouton-modif" type="submit" value="Enregistrer">
@@ -279,17 +313,17 @@
         }
     ?>    
 
-    <div <?php echo $hide; ?> class="b2">
+    <div <?php echo $hide; ?> <?php echo $hide3; ?> class="b2">
         <form action="fonctions/retirer.php" method="post">
             <input type="hidden" name ="id" value="<?php echo $id; ?>">
             <input type="hidden" name="retirer">
-            <input onclick="return confirm('Supprimer DEFINITIVEMENT le produit ?');" class="bouton-retirer" type="submit" value="Retirer">
+            <input onclick="return confirm('Voulez vous vraiment retirer ce produit du stock ?');" class="bouton-retirer" type="submit" value="Retirer">
         </form>
     </div>
 
     
 
-    <div class="b3">
+    <div <?php echo $hide3; ?> class="b3">
         <form action="fonctions/supprimer.php" method="post">
             <input type="hidden" name ="id" value="<?php echo $id; ?>">
             <input type="hidden" name="delete">
