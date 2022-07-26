@@ -27,6 +27,8 @@
             echo '<script> alert("'.$_SESSION['retirer'].'"); </script>';
             unset($_SESSION['retirer']);
         }
+
+        $id_unite_user = $_SESSION['id_unite'];
     ?>
 
     <div class="article">
@@ -140,6 +142,7 @@
 
 
                     // unite
+                    $id_unite_produit = $ligne['id_unite'];
                     $get_unite = "SELECT libelle FROM unite WHERE id = " . $ligne['id_unite'] . "";
                     $result = $mysqli->query($get_unite);
                     while($row = $result->fetch_assoc())
@@ -157,6 +160,14 @@
                     {
                         $classe = implode($row);
                     } 
+
+                    // Droits de l'utilisateur
+                    if ($id_unite_produit == $id_unite_user) {
+                        $hide = '';
+                    } else {
+                        $hide = 'hidden';
+                    }
+
 
                     ?>
                 <tr>
@@ -177,9 +188,8 @@
                         </form>
                     </td>
 
-
                     <td>                        
-                        <form action="fonctions/retirer.php" method="post">
+                        <form <?php echo $hide; ?> action="fonctions/retirer.php" method="post">
                             <input type="hidden" name ="id" value="<?php echo $id; ?>">
                             <input type="hidden" name="retirer">
                             <input onclick="return confirm('Voulez vous vraiment retirer ce produit du stock ?');" type="image" id="image" alt="Retirer" class="reduit2" src="images/retirer.png">
@@ -188,7 +198,7 @@
 
 
                     <td>                        
-                        <form action="fonctions/supprimer.php" method="post">
+                        <form <?php echo $hide; ?> action="fonctions/supprimer.php" method="post">
                             <input type="hidden" name ="id" value="<?php echo $id; ?>">
                             <input type="hidden" name="delete">
                             <input onclick="return confirm('Supprimer DEFINITIVEMENT le produit ?');" type="image" id="image" alt="Supprimer" class="reduit2" src="images/remove.png">

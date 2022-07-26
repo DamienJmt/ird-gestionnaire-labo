@@ -12,7 +12,7 @@ if(isset($_POST['retirer']))
     // DATE( NOW() )
     $id_s = $_SESSION['id'];
     $num_p = "PR " . $id;
-    $query = "UPDATE produit SET entame = '1', date_sortie = SELECT DATE( NOW() ), id_user_sortie = '$id_s', num = '$num_p' WHERE id='$id';";
+    $query = "UPDATE produit SET entame = '1', date_sortie = DATE( NOW() ), id_user_sortie = '$id_s', num = '$num_p' WHERE id='$id'";
     $query_run = mysqli_query($db, $query);
     
     if($query_run)
