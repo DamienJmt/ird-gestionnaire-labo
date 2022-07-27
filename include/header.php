@@ -1,7 +1,7 @@
 <header>
 
 <div class="left">
-    <p>Bienvenue <?php echo($_SESSION['nom'] . ' ' . $_SESSION['prenom']); ?></p>
+    <p>Bienvenue <?php echo($_SESSION['prenom'] . ' ' . $_SESSION['nom']); ?></p>
 </div>
 
 <div class="tittle">

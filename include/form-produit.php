@@ -81,7 +81,7 @@
             <img src="images/remove.png" alt="Vider" onclick="document.getElementById('lieu').value = ''">
             <p>donnée actuelle : <?php echo $lieu;?><p>
         </div>
-        <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        
         <div>
             <label>Etagère :</label>
             <?php
@@ -196,20 +196,22 @@
             ?>
             <select name="user_entree" id="user_entree">
                 <?php
-                $req = "SELECT id,initiales FROM user";
+                $req = "SELECT id,nom,prenom FROM user";
                 $resultat = $mysqli->query($req);
                 while ($row = $resultat->fetch_assoc())
                 {
                     $s = '';
                     if ($row['id']==$id_user_entree) {
                         $s = 'selected';
+                        $name = $row['prenom'];
+                        $last_name = $row['nom'];
                     }
-                    echo '<option value="' .$row['id']. '" ' .$s. '>' .$row['initiales']. '</option>';
+                    echo '<option value="' .$row['id']. '" ' .$s. '>' .$row['nom']. ' ' .$row['prenom']. '</option>';
                 }
                 ?>
             </select>
             <img src="images/remove.png" alt="Vider" onclick="document.getElementById('user_entree').value = ''">
-            <p>donnée actuelle : <?php echo $user_entree;?><p>
+            <p>donnée actuelle : <?php echo $last_name;?> <?php echo $name;?><p>
         </div>
 
         <div>
@@ -260,20 +262,22 @@
             <select name="user_sortie" id="user_sortie">
             <option value="0" <?php if (!$user_sortie) { echo 'selected'; }?>>N/A</option>
                 <?php
-                $req = "SELECT id,initiales FROM user";
+                $req = "SELECT id,nom,prenom FROM user";
                 $resultat = $mysqli->query($req);
                 while ($row = $resultat->fetch_assoc())
                 {
                     $s = '';
                     if ($row['id']==$id_user_sortie) {
                         $s = 'selected';
+                        $name = $row['prenom'];
+                        $last_name = $row['nom'];
                     }
-                    echo '<option value="' .$row['id']. '" ' .$s. '>' .$row['initiales']. '</option>';
+                    echo '<option value="' .$row['id']. '" ' .$s. '>' .$row['nom']. ' ' .$row['prenom']. '</option>';
                 }
                 ?>
             </select>
             <img src="images/remove.png" alt="Vider" onclick="document.getElementById('user_sortie').value = ''">
-            <p>donnée actuelle : <?php echo $user_sortie;?><p>
+            <p>donnée actuelle : <?php echo $last_name;?> <?php echo $name;?><p>
         </div>
 
         <div <?php echo $hide;?>>
