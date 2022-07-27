@@ -28,6 +28,12 @@
             unset($_SESSION['retirer']);
         }
 
+        if(isset($_SESSION['add']))
+        {
+            echo '<script> alert("'.$_SESSION['add'].'"); </script>';
+            unset($_SESSION['add']);
+        }
+
         $id_unite_user = $_SESSION['id_unite'];
     ?>
 
