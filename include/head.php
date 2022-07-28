@@ -6,4 +6,5 @@ session_start();
 if (!isset($_SESSION['email']) && !isset($_SESSION['nom']) && !isset($_SESSION['prenom'])) {
     header('Location: login.php');
 }
+date_default_timezone_set('Pacific/Noumea');
 ?>

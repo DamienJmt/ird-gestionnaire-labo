@@ -190,82 +190,48 @@ h1 {
 /* ------------------------------------------FORM------------------------------------------ */
 
 
-form div div {
-    margin-bottom: 7%;
-    margin-left: 7%;
+.flex-form {
+    height: 10%;
+}
+
+form div {
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+}
+
+form div input {
+    font-size: 15px;
 }
 
 form div label {
-    font-size: 130%;
-    margin-left: 2%;
-}
-
-form div label .choix {
+    font-size: 22px;
     margin-left: 2%;
 }
 
 form div img {
     vertical-align: middle;
-    width: 2.5%;
-    height: 2.5%;
+    width: 20px;
+    height: 20px;
 }
 
 form div p {
-    font-size: 90%;
+    font-size: 15px;
     font-style: italic;
     margin-top: 3px;
     margin-left: 2%;
 }
 
-.flex-form {
-    display: flex;
-    justify-content: right;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 3%;
-    flex-grow: 1;
-    width: 100%;
-}
-
-.div-g {
-    left:0;
-    margin-right: auto;
+.b {
+    margin-left: 2%;
+    margin-top: 50px;
 
 }
 
-.div-d {
-    right:0;
-    margin-left: auto;
-
-}
-
-.flex {
-    display:flex;
-    justify-content: right;
-    margin-left: 45px;
-    margin-right: auto;
-    flex-grow: 1;
-    width: 50%;
-}
-
-.b1 {
-    right:0;
-    margin-left: auto;
-}
-
-.b2 {
-    margin-left: auto;
-}
-
-
-.b3 {
-    left:0;
-    margin-right: auto;
-}
 
 .bouton-modif {
     background-color: rgb(101, 185, 101);
-    font-size: 130%;
+    font-size: 22px;
     border-color: #095a14;
 }
 .bouton-modif:hover {
@@ -275,7 +241,7 @@ form div p {
 
 .bouton-retirer {
     background-color: rgb(110, 161, 209);
-    font-size: 130%;
+    font-size: 22px;
     border-color: #17385e;
 }
 .bouton-retirer:hover {
@@ -285,11 +251,23 @@ form div p {
 
 .bouton-supp {
     background-color: rgb(240, 71, 71);
-    font-size: 130%;
+    font-size: 22px;
     border-color: #174d5e;
+    margin-bottom: 50px;
 }
 .bouton-supp:hover {
     box-shadow: #5a0909 2px 2px 8px;
+}
+
+
+.bouton-add {
+    background-color: rgb(101, 185, 101);
+    font-size: 22px;
+    border-color: #095a14;
+    margin-bottom: 50px;
+}
+.bouton-add:hover {
+    box-shadow: #09475a 2px 2px 8px;
 }
 
 

@@ -25,12 +25,12 @@
 
         <h2>Pistes d'amélioration du service (To Do list) :</h2>
         <ol type="1">
-            <li><b>Urgent :</b> faire foncionner l'ajout de produit</li>
             <li><b>Urgent :</b> mettre en place la gestion des déchets (listes/actions/ajout...)</li>
-            <li><b>Urgent :</b> revoir au moins le CSS des boutons dans les formulaires</li>
             <li><b>A faire :</b> insérer les données du labo dans la base de données</li>
             <li>Amélioration : créer une/des table(s) (produit_supp, déchet_supp) dans la base de données afin d'avoir un historique de suppression des produits/déchets et pouvoir faire des stats (éventuelles backups)</li>
             <li>Amélioration : droits des utilisateurs</li>
+            <li>Amélioration : Style global (CSS) à revoir</li>
+            <li>Amélioration : faire rentrer le plus possible de div sur la même page dans les formulaires</li>
             <li>Fonctionnalité : système de tri des listes (menus déroulants avec coche)</li>
             <li>Fonctionnalité : système de QR code sur les étiquettes des produits/déchets pour faciliter leur gestion</li>
             <li>Fonctionnalité : pouvoir consulter la fiche sécurité de chaque produit</li>

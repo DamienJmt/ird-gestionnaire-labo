@@ -1,8 +1,7 @@
-<form action="fonctions/modifier.php" class="flex-form" method="post">
+<div class="flex-form">
 
-
-    <div class="div-g"><!-- -------------------------------------------DIV-GAUCHE--------------------------------------------- -->
-
+    <form action="fonctions/modifier.php" method="post">
+        
         <div>
             <label>Nom :</label>
             <input type="text" name="nom" id="nom" value="<?php echo $nom;?>">
@@ -171,13 +170,7 @@
             <p>donnée actuelle : <?php echo $classe;?><p>
         </div>
 
-    </div><!-- ---------------------------------------------------------------------------------------------------- -->
-
-
-    <div class="div-d"><!-- -------------------------------------------DIV-DROITE----------------------------------------------- -->
-
-
-         <div>
+        <div>
             <label>Date d'entrée dans le stock :</label>
             <input type="date" name="date_entree" id="date_entree" value="<?php echo $date_entree;?>">
             <img src="images/remove.png" alt="Vider" onclick="document.getElementById('date_entree').value = ''">
@@ -237,7 +230,7 @@
             <label>Entamé ou non : <?php echo $v;?></label>
             <input type="hidden" name ="entame" value="<?php echo $entame; ?>">
             <p <?php echo $hide2;?>>(Modifiable seulement grâce aux boutons "Retirer")<p>
-            <p <?php echo $hide2;?>>(Les champs "Date de sortie du stock", "Personne l'ayant sorti du stock" <br>et "Numéro" seront modifiables seulement une fois le produit retiré)    <p>
+            <p <?php echo $hide2;?>>(Les champs "Date de sortie du stock", "Personne l'ayant sorti du stock" <br>et "Numéro" seront modifiables seulement une fois le produit retiré)<p>
         </div>
 
 
@@ -269,8 +262,6 @@
                     $s = '';
                     if ($row['id']==$id_user_sortie) {
                         $s = 'selected';
-                        $name = $row['prenom'];
-                        $last_name = $row['nom'];
                     }
                     echo '<option value="' .$row['id']. '" ' .$s. '>' .$row['nom']. ' ' .$row['prenom']. '</option>';
                 }
@@ -296,44 +287,42 @@
             }
         ?>
 
-        <div <?php echo $hide3; ?> class="b1">
+        <div <?php echo $hide3; ?> class="b">
             <input type="hidden" name="edit">
             <input type="hidden" name="id" value="<?php echo $id;?>">
             <input  onclick="return confirm('Voulez-vous vraiment enregistrer les modifications effectuées ?');" class="bouton-modif" type="submit" value="Enregistrer">
         </div>
+    </form>
 
-    </div><!-- ---------------------------------------------------------------------------------------------------- -->
+    <div>            
 
+        <?php
+            if ($entame) {
+                $hide = "hidden";
+            } else {
+                $hide = "";
+            }
+        ?>    
 
-</form>
+        <div <?php echo $hide; ?> <?php echo $hide3; ?> class="b">
+            <form action="fonctions/retirer.php" method="post">
+                <input type="hidden" name ="id" value="<?php echo $id; ?>">
+                <input type="hidden" name="retirer">
+                <input onclick="return confirm('Voulez vous vraiment retirer ce produit du stock ?');" class="bouton-retirer" type="submit" value="Retirer">
+            </form>
+        </div>
 
-<div class="flex">            
+        
 
-    <?php
-        if ($entame) {
-            $hide = "hidden";
-        } else {
-            $hide = "";
-        }
-    ?>    
+        <div <?php echo $hide3; ?> class="b">
+            <form action="fonctions/supprimer.php" method="post">
+                <input type="hidden" name ="id" value="<?php echo $id; ?>">
+                <input type="hidden" name="delete">
+                <input onclick="return confirm('Supprimer DEFINITIVEMENT le produit ?');" class="bouton-supp" type="submit" value="Supprimer">
+            </form>
+        </div>
 
-    <div <?php echo $hide; ?> <?php echo $hide3; ?> class="b2">
-        <form action="fonctions/retirer.php" method="post">
-            <input type="hidden" name ="id" value="<?php echo $id; ?>">
-            <input type="hidden" name="retirer">
-            <input onclick="return confirm('Voulez vous vraiment retirer ce produit du stock ?');" class="bouton-retirer" type="submit" value="Retirer">
-        </form>
     </div>
-
     
-
-    <div <?php echo $hide3; ?> class="b3">
-        <form action="fonctions/supprimer.php" method="post">
-            <input type="hidden" name ="id" value="<?php echo $id; ?>">
-            <input type="hidden" name="delete">
-            <input onclick="return confirm('Supprimer DEFINITIVEMENT le produit ?');" class="bouton-supp" type="submit" value="Supprimer">
-        </form>
-    </div>
 </div>
-
 
