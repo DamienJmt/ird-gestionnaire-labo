@@ -27,6 +27,7 @@
         <ol type="1">
             <li><b>Urgent :</b> faire foncionner l'ajout de produit</li>
             <li><b>Urgent :</b> mettre en place la gestion des déchets (listes/actions/ajout...)</li>
+            <li><b>Urgent :</b> revoir au moins le CSS des boutons dans les formulaires</li>
             <li><b>A faire :</b> insérer les données du labo dans la base de données</li>
             <li>Amélioration : créer une/des table(s) (produit_supp, déchet_supp) dans la base de données afin d'avoir un historique de suppression des produits/déchets et pouvoir faire des stats (éventuelles backups)</li>
             <li>Amélioration : droits des utilisateurs</li>

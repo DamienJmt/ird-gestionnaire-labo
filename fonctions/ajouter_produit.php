@@ -24,36 +24,45 @@ if(isset($_POST['add']))
     $classe_de_danger = $_POST['classe_de_danger'];
 
     $quantite = $_POST['quantite'];
-    
-    $query = "INSERT INTO produit VALUES (
-                                 $id, 
-                                 '$nom', 
-                                 '$reference', 
-                                 '$volume',
-                                 '$date_entree',
-                                 $date_sortie,
-                                 '$remarque',
-                                 $num,
-                                 '$marque',
-                                 '$lieu',
-                                 '$etagere',
-                                 '$unite',
-                                 '$user_entree',
-                                 '$entame',
-                                 $user_sortie, 
-                                 '$classe_de_danger') 
-                                 ";
+    $succes = 0;
 
-    $query_run = mysqli_query($db, $query);
-    
-    if($query_run)
-    {
-        $_SESSION['add'] = "Produit ajouté avec succès !";
-        header("Location: ../liste-produit.php");
+    for ($i = 1; $i <= $quantite; $i++) {
+        
+        $query = "INSERT INTO produit VALUES (
+            $id, 
+            '$nom', 
+            '$reference', 
+            '$volume',
+            '$date_entree',
+            $date_sortie,
+            '$remarque',
+            $num,
+            '$marque',
+            '$lieu',
+            '$etagere',
+            '$unite',
+            '$user_entree',
+            '$entame',
+            $user_sortie, 
+            '$classe_de_danger') 
+            ";
+        $query_run = mysqli_query($db, $query);
+
+        if($query_run)
+        {
+            $succes++;
+        }
+        else
+        {
+            $_SESSION['add'] = "Echec de l'ajout du/des produit(s) !";
+            header("Location: ../liste-produit.php");
+        }
+
     }
-    else
+
+    if($succes==$quantite)
     {
-        $_SESSION['add'] = "Echec de l'ajout du produit !";
+        $_SESSION['add'] = "Produit(s) ajouté(s) avec succès !";
         header("Location: ../liste-produit.php");
     }
 }
