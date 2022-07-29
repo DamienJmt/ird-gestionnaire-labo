@@ -191,12 +191,11 @@ h1 {
 
 
 .flex-form {
-    height: 10%;
+    padding-bottom: 45px;
 }
 
 form div {
     margin-top: 50px;
-    margin-bottom: 50px;
 
 }
 
@@ -253,7 +252,6 @@ form div p {
     background-color: rgb(240, 71, 71);
     font-size: 22px;
     border-color: #174d5e;
-    margin-bottom: 50px;
 }
 .bouton-supp:hover {
     box-shadow: #5a0909 2px 2px 8px;

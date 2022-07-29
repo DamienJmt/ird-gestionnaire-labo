@@ -150,7 +150,7 @@
             <div>            
                 <div class="b">
                     <input type="hidden" name="add">
-                    <input onclick="return confirm('Ajouter ce(s) produits au stock ?');" class="bouton-add" type="submit" value="Ajouter">
+                    <input onclick="return confirm('Ajouter ce(s) produit(s) au stock ?');" class="bouton-add" type="submit" value="Ajouter">
                 </div>
             </div>
 
