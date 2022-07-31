@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Dim 24 Juillet 2022 à 21:10
+-- Généré le :  Dim 31 Juillet 2022 à 22:29
 -- Version du serveur :  5.7.11
 -- Version de PHP :  5.6.18
 
@@ -67,9 +67,11 @@ CREATE TABLE `dechet` (
   `volume` varchar(255) NOT NULL,
   `date_entree` date NOT NULL,
   `remarque` varchar(255) DEFAULT NULL,
-  `num` varchar(255) NOT NULL,
+  `num` varchar(255) DEFAULT NULL,
   `id_classe_de_danger` int(10) NOT NULL,
+  `id_lieu` int(10) NOT NULL,
   `id_etagere` int(10) NOT NULL,
+  `id_unite` int(10) NOT NULL,
   `id_user_entree` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -77,9 +79,12 @@ CREATE TABLE `dechet` (
 -- Contenu de la table `dechet`
 --
 
-INSERT INTO `dechet` (`id`, `nom`, `volume`, `date_entree`, `remarque`, `num`, `id_classe_de_danger`, `id_etagere`, `id_user_entree`) VALUES
-(1, 'Dechet nutritif', '30L', '2022-07-01', 'Remarque du déchet.', 'DE 6', 6, 10, 1),
-(2, 'Dechet chromate', '20L', '2022-07-04', 'Autre remarque du déchet', 'DE 7', 6, 10, 1);
+INSERT INTO `dechet` (`id`, `nom`, `volume`, `date_entree`, `remarque`, `num`, `id_classe_de_danger`, `id_lieu`, `id_etagere`, `id_unite`, `id_user_entree`) VALUES
+(2, 'Dechet chromate', '20L', '2022-07-04', 'Autre remarque du déchet', 'DE 7', 6, 1, 10, 2, 2),
+(28, 'gdfgsdfg', 'dgdsgsdg', '2022-07-29', 'dfgsfdgd', 'DE 28', 1, 1, 1, 1, 1),
+(29, 'gdfgsdfg', 'dgdsgsdg', '2022-07-29', 'dfgsfdgd', 'DE 29', 1, 1, 1, 1, 1),
+(30, 'gdfgsdfg', 'dgdsgsdg', '2022-07-29', 'dfgsfdgd', 'DE 30', 1, 1, 1, 1, 1),
+(31, 'gdfgsdfg', 'dgdsgsdg', '2022-07-29', 'dfgsfdgd', 'DE 31', 1, 1, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -89,34 +94,33 @@ INSERT INTO `dechet` (`id`, `nom`, `volume`, `date_entree`, `remarque`, `num`, `
 
 CREATE TABLE `etagere` (
   `id` int(10) NOT NULL,
-  `libelle` varchar(255) NOT NULL,
-  `id_lieu` int(10) NOT NULL
+  `libelle` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `etagere`
 --
 
-INSERT INTO `etagere` (`id`, `libelle`, `id_lieu`) VALUES
-(1, 'A1 ', 1),
-(2, 'A2 ', 1),
-(3, 'A3 ', 1),
-(4, 'A4 ', 1),
-(5, 'A5 ', 1),
-(6, 'B1 ', 1),
-(7, 'B2 ', 1),
-(8, 'B3 ', 1),
-(9, 'B4 ', 1),
-(10, 'B5 ', 1),
-(11, 'C1 ', 1),
-(12, 'C2 ', 1),
-(13, 'C3 ', 1),
-(14, 'C4 ', 1),
-(15, 'C5 ', 1),
-(16, 'D1 ', 1),
-(17, 'D2 ', 1),
-(18, 'D3 ', 1),
-(19, 'D4 ', 1);
+INSERT INTO `etagere` (`id`, `libelle`) VALUES
+(1, 'A1 '),
+(2, 'A2 '),
+(3, 'A3 '),
+(4, 'A4 '),
+(5, 'A5 '),
+(6, 'B1 '),
+(7, 'B2 '),
+(8, 'B3 '),
+(9, 'B4 '),
+(10, 'B5 '),
+(11, 'C1 '),
+(12, 'C2 '),
+(13, 'C3 '),
+(14, 'C4 '),
+(15, 'C5 '),
+(16, 'D1 '),
+(17, 'D2 '),
+(18, 'D3 '),
+(19, 'D4 ');
 
 -- --------------------------------------------------------
 
@@ -181,6 +185,7 @@ CREATE TABLE `produit` (
   `remarque` varchar(255) DEFAULT NULL,
   `num` varchar(255) DEFAULT NULL,
   `id_marque` int(10) NOT NULL,
+  `id_lieu` int(10) NOT NULL,
   `id_etagere` int(10) NOT NULL,
   `id_unite` int(10) NOT NULL,
   `id_user_entree` int(10) NOT NULL,
@@ -193,26 +198,47 @@ CREATE TABLE `produit` (
 -- Contenu de la table `produit`
 --
 
-INSERT INTO `produit` (`id`, `nom`, `reference`, `volume`, `date_entree`, `date_sortie`, `remarque`, `num`, `id_marque`, `id_etagere`, `id_unite`, `id_user_entree`, `entame`, `id_user_sortie`, `id_classe_de_danger`) VALUES
-(2, 'ETHANOL', 'AJA214-2.5L', '2,5L', '2022-07-04', '2022-07-06', 'Ceci est une autre remarque.', 'PR 11', 8, 7, 1, 2, 1, 2, 2),
-(3, 'ACETONE2', 'N/2271/PB15', '1L', '2022-07-06', NULL, 'Ceci est une remarque2.', NULL, 2, 12, 1, 2, 0, NULL, 2),
-(4, 'eqsd1', 'qsd', 'qsd', '2022-07-06', '2022-07-19', 'qsd', 'qsd', 1, 1, 1, 1, 1, 1, 1),
-(5, 'ACETONE', 'N/2271/PB15', '1L', '2022-07-06', NULL, 'Ceci est une remarque1.', NULL, 2, 12, 1, 2, 0, NULL, 2),
-(6, 'ACETONE3', 'N/2271/PB15', '1L', '2022-07-06', NULL, 'Ceci est une remarque3.', NULL, 2, 12, 1, 2, 0, NULL, 2),
-(17, 'addddddddd10', 'dddqsf', 'ddddqfqsfd', '2022-07-02', NULL, 'ddddddddd', NULL, 4, 16, 8, 2, 0, NULL, 10),
-(18, 'ddddddddd11', 'ddddddddd', 'ddddddddd', '2022-07-06', NULL, 'ddddddddd', NULL, 2, 12, 1, 2, 0, NULL, 2),
-(19, 'ddddddddd12', 'ddddddddd', 'ddddddddd', '2022-07-06', NULL, 'ddddddddd', NULL, 2, 12, 1, 2, 0, NULL, 2),
-(20, 'ddddddddd13', 'ddddddddd', 'ddddddddd', '2022-07-06', NULL, 'ddddddddd', NULL, 2, 12, 1, 2, 0, NULL, 2),
-(21, 'ddddddddd14', 'ddddddddd', 'ddddddddd', '2022-07-06', NULL, 'ddddddddd', NULL, 2, 12, 1, 2, 0, NULL, 2),
-(22, 'ddddddddd15', 'ddddddddd', 'ddddddddd', '2022-07-06', NULL, 'ddddddddd', NULL, 2, 12, 1, 2, 0, NULL, 2),
-(23, 'ddddddddd16', 'ddddddddd', 'ddddddddd', '2022-07-06', NULL, 'ddddddddd', NULL, 2, 12, 1, 2, 0, NULL, 2),
-(24, 'ddddddddd17', 'ddddddddd', 'ddddddddd', '2022-07-06', NULL, 'ddddddddd', NULL, 2, 12, 1, 2, 0, NULL, 2),
-(25, 'ddddddddd18', 'ddddddddd', 'ddddddddd', '2022-07-06', NULL, 'ddddddddd', NULL, 2, 12, 1, 2, 0, NULL, 2),
-(26, 'qsd2', 'qsd', 'qsd', '2022-07-06', '2022-07-19', 'qsd', 'qsd', 1, 1, 1, 1, 1, 1, 1),
-(27, 'qsd3', 'qsd', 'qsd', '2022-07-06', '2022-07-19', 'qsd', 'qsd', 1, 1, 1, 1, 1, 1, 1),
-(28, 'qsd5', 'qsd', 'qsd', '2022-07-06', '2022-07-19', 'qsd', 'qsd', 1, 1, 1, 1, 1, 1, 1),
-(29, 'qsd4', 'qsd', 'qsd', '2022-07-06', '2022-07-19', 'qsd', 'qsd', 1, 1, 1, 1, 1, 1, 1),
-(30, 'ddddddddd20', 'ddddddddd', 'ddddddddd', '2022-07-06', NULL, 'ddddddddd', NULL, 2, 12, 1, 2, 0, NULL, 2);
+INSERT INTO `produit` (`id`, `nom`, `reference`, `volume`, `date_entree`, `date_sortie`, `remarque`, `num`, `id_marque`, `id_lieu`, `id_etagere`, `id_unite`, `id_user_entree`, `entame`, `id_user_sortie`, `id_classe_de_danger`) VALUES
+(2, 'ETHANOL', 'AJA214-2.5L', '2,5L', '2022-07-04', '2022-07-06', 'Ceci est une autre remarque.', 'PR 11', 8, 1, 7, 1, 2, 1, 2, 2),
+(4, 'eqsd1', 'qsd', 'qsd', '2022-07-06', '2022-07-19', 'qsd', 'qsd', 1, 1, 1, 1, 1, 1, 1, 1),
+(5, 'ACETONE', 'N/2271/PB15', '1L', '2022-07-06', NULL, 'Ceci est une remarque1.', NULL, 2, 1, 12, 1, 2, 0, NULL, 2),
+(6, 'ACETONE3', 'N/2271/PB15', '1L', '2022-07-06', NULL, 'Ceci est une remarque3.', NULL, 2, 1, 12, 1, 2, 0, NULL, 2),
+(17, 'addddddddd10', 'dddqsf', 'ddddqfqsfd', '2022-07-02', NULL, 'ddddddddd', NULL, 4, 1, 16, 8, 2, 0, NULL, 10),
+(18, 'ddddddddd11', 'ddddddddd', 'ddddddddd', '2022-07-06', NULL, 'ddddddddd', NULL, 2, 1, 12, 12, 2, 0, NULL, 2),
+(19, 'ddddddddd12', 'ddddddddd', 'ddddddddd', '2022-07-06', NULL, 'ddddddddd', NULL, 2, 1, 12, 1, 2, 0, NULL, 2),
+(20, 'ddddddddd13', 'ddddddddd', 'ddddddddd', '2022-07-06', '2022-07-26', 'ddddddddd', 'PR 20', 2, 1, 12, 1, 2, 1, 1, 2),
+(21, 'ddddddddd14', 'ddddddddd', 'ddddddddd', '2022-07-06', NULL, 'ddddddddd', NULL, 2, 1, 12, 5, 2, 0, NULL, 2),
+(22, 'azer', 'ddddddddd', 'azer', '2022-07-29', NULL, 'azer', 'DE 22', 2, 1, 1, 1, 1, 0, NULL, 1),
+(23, 'qsdf', 'ddddddddd', 'qsdf', '2022-07-29', NULL, 'qsdf', 'DE 23', 2, 1, 1, 1, 1, 0, NULL, 1),
+(24, 'qsdf', 'ddddddddd', 'qsdf', '2022-07-29', NULL, 'qsdfd', 'PR 24', 2, 1, 1, 1, 1, 0, NULL, 1),
+(25, 'qsdf', 'ddddddddd', 'qsdf', '2022-07-29', NULL, 'qsdf', 'DE 25', 2, 1, 1, 1, 1, 0, NULL, 1),
+(26, 'azerty', 'qsd', 'azer', '2022-07-29', '2022-07-19', 'azer', 'DE 26', 1, 1, 1, 1, 1, 1, 1, 1),
+(27, 'qsd3', 'qsd', 'qsd', '2022-07-06', '2022-07-19', 'qsd', 'qsd', 1, 1, 1, 1, 1, 1, 1, 1),
+(28, 'qsd5', 'qsd', 'qsd', '2022-07-06', '2022-07-19', 'qsd', 'qsd', 1, 1, 1, 1, 1, 1, 1, 1),
+(29, 'qsd4', 'qsd', 'qsd', '2022-07-06', '2022-07-19', 'qsd', 'qsd', 1, 1, 1, 1, 1, 1, 1, 1),
+(30, 'ddddddddd20', 'ddddddddd', 'ddddddddd', '2022-07-06', NULL, 'ddddddddd', NULL, 2, 1, 12, 1, 2, 0, NULL, 2),
+(31, 'ddddddddd1000', 'ddddddddd', 'ddddddddd', '2022-07-06', NULL, 'ddddddddd', NULL, 2, 1, 12, 1, 2, 0, NULL, 2),
+(32, 'ddddddddd1000', 'ddddddddd', 'ddddddddd', '2022-07-06', NULL, 'ddddddddd', NULL, 2, 1, 12, 5, 2, 0, NULL, 2),
+(33, 'ddddddddd1000', 'ddddddddd', 'ddddddddd', '2022-07-06', NULL, 'ddddddddd', NULL, 2, 1, 12, 1, 2, 0, NULL, 2),
+(34, 'ddddddddd1000', 'ddddddddd', 'ddddddddd', '2022-07-06', NULL, 'ddddddddd', NULL, 2, 1, 12, 1, 2, 0, NULL, 2),
+(35, 'ddddddddd1000', 'ddddddddd', 'ddddddddd', '2022-07-06', NULL, 'ddddddddd', NULL, 2, 1, 12, 1, 2, 0, NULL, 2),
+(36, 'ddddddddd1000', 'ddddddddd', 'ddddddddd', '2022-07-06', NULL, 'ddddddddd', NULL, 2, 1, 12, 1, 2, 0, NULL, 2),
+(37, 'ddddddddd1000', 'ddddddddd', 'ddddddddd', '2022-07-06', NULL, 'ddddddddd', NULL, 2, 1, 12, 1, 2, 0, NULL, 2),
+(38, 'ddddddddd1000', 'ddddddddd', 'ddddddddd', '2022-07-06', NULL, 'ddddddddd', NULL, 2, 1, 12, 1, 2, 0, NULL, 2),
+(39, 'ddddddddd155', 'ddddddddd', 'ddddddddd', '2022-07-06', NULL, 'ddddddddd', NULL, 2, 1, 12, 1, 2, 0, NULL, 2),
+(40, 'aa', 'aaaa', 'aaaa', '2022-07-28', NULL, 'aaaa', NULL, 1, 1, 1, 1, 1, 0, NULL, 1),
+(41, 'ACETONE4', 'fgjh', 'gfjh', '2022-07-28', NULL, '', NULL, 1, 1, 1, 1, 1, 0, NULL, 1),
+(42, 'qsfd', 'sdqf', 'sqdf', '2022-07-14', NULL, 'sdqf', NULL, 1, 1, 1, 1, 1, 0, NULL, 1),
+(43, 'nombre7', 'nombre7', 'nombre7', '2022-07-28', NULL, 'nombre7', NULL, 1, 1, 1, 1, 1, 0, NULL, 1),
+(44, 'nombre7', 'nombre7', 'nombre7', '2022-07-28', NULL, 'nombre7', NULL, 1, 1, 1, 1, 1, 0, NULL, 1),
+(45, 'nombre7', 'nombre7', 'nombre7', '2022-07-28', NULL, 'nombre7', NULL, 1, 1, 1, 1, 1, 0, NULL, 1),
+(46, 'nombre7', 'nombre7', 'nombre7', '2022-07-28', NULL, 'nombre7', NULL, 1, 1, 1, 1, 1, 0, NULL, 1),
+(47, 'nombre7', 'nombre7', 'nombre7', '2022-07-28', NULL, 'nombre7', NULL, 1, 1, 1, 1, 1, 0, NULL, 1),
+(48, 'nombre7', 'nombre7', 'nombre7', '2022-07-28', NULL, 'nombre7', NULL, 1, 1, 1, 1, 1, 0, NULL, 1),
+(49, 'nombre7', 'nombre7', 'nombre7', '2022-07-28', NULL, 'nombre7', NULL, 1, 1, 1, 1, 1, 0, NULL, 1),
+(50, '111', '111', '111', '2022-07-29', NULL, '111', NULL, 6, 3, 8, 1, 1, 0, NULL, 2),
+(51, '111', '111', '111', '2022-07-29', '2022-07-29', '111', 'PR 51', 6, 3, 8, 1, 1, 1, 1, 2),
+(52, '111', '111', '111', '2022-07-29', NULL, '111', NULL, 6, 3, 8, 1, 1, 0, NULL, 2);
 
 -- --------------------------------------------------------
 
@@ -290,14 +316,15 @@ ALTER TABLE `dechet`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_user_entree` (`id_user_entree`),
   ADD KEY `id_etagere` (`id_etagere`),
-  ADD KEY `id_classe_de_danger` (`id_classe_de_danger`);
+  ADD KEY `id_classe_de_danger` (`id_classe_de_danger`),
+  ADD KEY `id_lieu` (`id_lieu`),
+  ADD KEY `id_unite` (`id_unite`);
 
 --
 -- Index pour la table `etagere`
 --
 ALTER TABLE `etagere`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id_lieu` (`id_lieu`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `lieu`
@@ -321,7 +348,8 @@ ALTER TABLE `produit`
   ADD KEY `id_user_entree` (`id_user_entree`),
   ADD KEY `id_etagere` (`id_etagere`),
   ADD KEY `id_marque` (`id_marque`),
-  ADD KEY `id_unite` (`id_unite`);
+  ADD KEY `id_unite` (`id_unite`),
+  ADD KEY `id_lieu` (`id_lieu`);
 
 --
 -- Index pour la table `unite`
@@ -341,10 +369,15 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT pour la table `classe_de_danger`
+--
+ALTER TABLE `classe_de_danger`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+--
 -- AUTO_INCREMENT pour la table `dechet`
 --
 ALTER TABLE `dechet`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 --
 -- AUTO_INCREMENT pour la table `etagere`
 --
@@ -364,7 +397,7 @@ ALTER TABLE `marque`
 -- AUTO_INCREMENT pour la table `produit`
 --
 ALTER TABLE `produit`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 --
 -- AUTO_INCREMENT pour la table `unite`
 --
@@ -385,13 +418,9 @@ ALTER TABLE `user`
 ALTER TABLE `dechet`
   ADD CONSTRAINT `dechet_ibfk_1` FOREIGN KEY (`id_classe_de_danger`) REFERENCES `classe_de_danger` (`id`),
   ADD CONSTRAINT `dechet_ibfk_2` FOREIGN KEY (`id_etagere`) REFERENCES `etagere` (`id`),
-  ADD CONSTRAINT `dechet_ibfk_3` FOREIGN KEY (`id_user_entree`) REFERENCES `user` (`id`);
-
---
--- Contraintes pour la table `etagere`
---
-ALTER TABLE `etagere`
-  ADD CONSTRAINT `etagere_ibfk_1` FOREIGN KEY (`id_lieu`) REFERENCES `lieu` (`id`);
+  ADD CONSTRAINT `dechet_ibfk_3` FOREIGN KEY (`id_user_entree`) REFERENCES `user` (`id`),
+  ADD CONSTRAINT `dechet_ibfk_4` FOREIGN KEY (`id_lieu`) REFERENCES `lieu` (`id`),
+  ADD CONSTRAINT `dechet_ibfk_5` FOREIGN KEY (`id_unite`) REFERENCES `unite` (`id`);
 
 --
 -- Contraintes pour la table `produit`
@@ -402,7 +431,8 @@ ALTER TABLE `produit`
   ADD CONSTRAINT `produit_ibfk_3` FOREIGN KEY (`id_user_entree`) REFERENCES `user` (`id`),
   ADD CONSTRAINT `produit_ibfk_4` FOREIGN KEY (`id_user_sortie`) REFERENCES `user` (`id`),
   ADD CONSTRAINT `produit_ibfk_5` FOREIGN KEY (`id_classe_de_danger`) REFERENCES `classe_de_danger` (`id`),
-  ADD CONSTRAINT `produit_ibfk_6` FOREIGN KEY (`id_unite`) REFERENCES `unite` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `produit_ibfk_6` FOREIGN KEY (`id_unite`) REFERENCES `unite` (`id`),
+  ADD CONSTRAINT `produit_ibfk_7` FOREIGN KEY (`id_lieu`) REFERENCES `lieu` (`id`);
 
 --
 -- Contraintes pour la table `user`
