@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Dim 31 Juillet 2022 à 22:29
+-- Généré le :  Dim 31 Juillet 2022 à 23:59
 -- Version du serveur :  5.7.11
 -- Version de PHP :  5.6.18
 
@@ -53,7 +53,8 @@ INSERT INTO `classe_de_danger` (`id`, `libelle`) VALUES
 (15, 'COMB+TOX+CORR '),
 (16, 'CORR+IRR '),
 (17, 'CORR+INFL '),
-(18, 'CORR+ENV ');
+(18, 'CORR+ENV '),
+(19, 'azer');
 
 -- --------------------------------------------------------
 
@@ -72,7 +73,8 @@ CREATE TABLE `dechet` (
   `id_lieu` int(10) NOT NULL,
   `id_etagere` int(10) NOT NULL,
   `id_unite` int(10) NOT NULL,
-  `id_user_entree` int(10) NOT NULL
+  `id_user_entree` int(10) NOT NULL,
+  `archived` tinyint(1) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -167,7 +169,8 @@ INSERT INTO `marque` (`id`, `libelle`) VALUES
 (7, 'INCONNU '),
 (8, 'UNIVAR '),
 (9, 'CARLO ERBA '),
-(10, 'TECHCAL ');
+(10, 'TECHCAL '),
+(11, 'azer');
 
 -- --------------------------------------------------------
 
@@ -191,7 +194,8 @@ CREATE TABLE `produit` (
   `id_user_entree` int(10) NOT NULL,
   `entame` tinyint(1) DEFAULT NULL,
   `id_user_sortie` int(10) DEFAULT NULL,
-  `id_classe_de_danger` int(10) NOT NULL
+  `id_classe_de_danger` int(10) NOT NULL,
+  `archived` tinyint(1) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -372,7 +376,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT pour la table `classe_de_danger`
 --
 ALTER TABLE `classe_de_danger`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT pour la table `dechet`
 --
@@ -392,7 +396,7 @@ ALTER TABLE `lieu`
 -- AUTO_INCREMENT pour la table `marque`
 --
 ALTER TABLE `marque`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT pour la table `produit`
 --

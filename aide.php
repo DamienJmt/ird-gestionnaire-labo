@@ -14,6 +14,14 @@
 
         <h2>Quelques astuces :</h2>
 
+        <h3>1) Manipuler un produit :</h3>
+
+        <img href="/images/aide/produit.png" alt="image-produit">
+
+        <p>Les boutons suivant servent à donner le statut "entamé" à un produit :</p>
+
+        <p>Les boutons suivant servent à archiver un produit ou un déchet :</p>
+
     </div>
 
 </body>

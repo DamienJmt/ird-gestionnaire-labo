@@ -8,7 +8,7 @@ if(isset($_POST['delete']))
 {
     $id = $_POST['id'];
 
-    $query = "DELETE FROM dechet WHERE id='$id'";
+    $query = "UPDATE dechet SET archived = '1' WHERE id='$id'";
     $query_run = mysqli_query($db, $query);
     
     if($query_run)

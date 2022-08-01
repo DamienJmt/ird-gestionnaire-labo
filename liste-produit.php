@@ -66,7 +66,7 @@
                 $mysqli = new mysqli($db_host, $db_username, $db_password,$db_name);
                 $mysqli->set_charset("utf8");
                 $requete = "SELECT * FROM produit 
-                            WHERE entame=0 
+                            WHERE entame=0 AND archived=0
                             ORDER BY 
                                 (CASE id_unite
                                 WHEN '$id_unite_user' THEN 1

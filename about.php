@@ -13,22 +13,22 @@
     <div class="article">
 
         <h2>A propos :</h2>
-        <p>Gestionnaire de laboratoire pour l'IRD de Nouvelle-Calédonie.</p>
+        <p>Gestionnaire de laboratoire de l'IRD de Nouvelle-Calédonie ayant pour objectif d'optimiser le suivi des produits et des déchets.</p>
 
         <h2>Documentation :</h2>
-        <p>Caractéristiques de développement :</p>
+        <p>Caractéristiques techniques :</p>
         <ul type="1">
             <li>PHP (php-5.6.18)</li>
             <li>MySQL (mysql-5.7.11)</li>
+            <li>Hébergé sur une machine (siteLaboChimie.ird.nc) dont l'IP est 10.41.2.136</li>
+            <li>Serveur Ubuntu 18</li>
         </ul>
-        <p> Développement par Damien JAMET (jamet.damien02@gmail.com)
+        <p> Développement par Damien JAMET (jamet.damien02@gmail.com) </p>
 
         <h2>Pistes d'amélioration du service (To Do list) :</h2>
         <ol type="1">
-            <li><b>Urgent :</b> mettre en place la gestion des déchets (listes/actions/ajout...)</li>
             <li><b>A faire :</b> insérer les données du labo dans la base de données</li>
             <li>Amélioration : créer une/des table(s) (produit_supp, déchet_supp) dans la base de données afin d'avoir un historique de suppression des produits/déchets et pouvoir faire des stats (éventuelles backups)</li>
-            <li>Amélioration : droits des utilisateurs</li>
             <li>Amélioration : Style global (CSS) à revoir</li>
             <li>Amélioration : faire rentrer le plus possible de div sur la même page dans les formulaires</li>
             <li>Fonctionnalité : système de tri des listes (menus déroulants avec coche)</li>
